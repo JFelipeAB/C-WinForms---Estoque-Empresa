@@ -16,7 +16,7 @@ namespace Estoque_Empresa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipal());
+            Application.Run(new TelaMenu());
         }
     }
 }

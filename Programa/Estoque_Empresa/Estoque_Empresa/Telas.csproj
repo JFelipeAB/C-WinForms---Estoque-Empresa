@@ -52,11 +52,11 @@
     <Compile Include="TelaConfirmacao.Designer.cs">
       <DependentUpon>TelaConfirmacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaPrincipal.cs">
+    <Compile Include="TelaMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaPrincipal.Designer.cs">
-      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    <Compile Include="TelaMenu.Designer.cs">
+      <DependentUpon>TelaMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,7 +68,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaConfirmacao.resx">
+      <DependentUpon>TelaConfirmacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaMenu.resx">
+      <DependentUpon>TelaMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,6 +88,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Classes\Classes.csproj">
+      <Project>{0207f6c9-eb5d-45b8-8ce4-39c05cb83a4b}</Project>
+      <Name>Classes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\backgroud2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
