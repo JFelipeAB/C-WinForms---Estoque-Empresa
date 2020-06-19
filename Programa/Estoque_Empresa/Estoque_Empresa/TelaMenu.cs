@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Classes;
+using Entidades;
+
 
 namespace Estoque_Empresa
 {
@@ -18,6 +19,7 @@ namespace Estoque_Empresa
 
         public List<Estoque> lista = new List<Estoque>();
 
+        public Numerais.Tela telaAtual = Numerais.Tela.TelaEstoque;
         public TelaMenu()
         {
             InitializeComponent();
@@ -26,38 +28,45 @@ namespace Estoque_Empresa
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            
             gridLista.Rows.Clear();
             CbAlterar.Items.Clear();
-            int pos = 0;
-            bool ExisteItem = false;
-            foreach (Estoque a in lista)
+            if (!telaAtual.Equals(0))
             {
-                if (a.Nome.ToUpper().IndexOf(txtBusca.Text.ToString().Trim().ToUpper()) != -1) //busca qualuqer parte do Nome
+                int pos = 0;
+                bool ExisteItem = false;
+                foreach (Estoque a in lista)
                 {
-                    gridLista.Rows.Add();
-                    gridLista.Rows[pos].Cells[0].Value = a.Nome;
-                    gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
-                    gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
-                    gridLista.Rows[pos].Cells[3].Value = a.Local;
-                    gridLista.Rows[pos].Cells[4].Value = a.Data;
-                    gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
-                    pos++;
-                    CbAlterar.Items.Add(a.Nome);
-                    ExisteItem = true;
+                    if (a.Nome.ToUpper().IndexOf(txtBusca.Text.ToString().Trim().ToUpper()) != -1) //busca qualuqer parte do Nome
+                    {
+                        gridLista.Rows.Add();
+                        gridLista.Rows[pos].Cells[0].Value = a.Nome;
+                        gridLista.Rows[pos].Cells[1].Value = a.Disponivel;
+                        gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
+                        gridLista.Rows[pos].Cells[3].Value = a.Local;
+                        gridLista.Rows[pos].Cells[4].Value = a.Data;
+                        gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
+                        pos++;
+                        CbAlterar.Items.Add(a.Nome);
+                        ExisteItem = true;
+                    }
                 }
+                if (!ExisteItem)
+                {
+                    MessageBox.Show("Nenhum item Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    AtualizaGrid();
+                }
+                txtBusca.Clear();
             }
-            if (!ExisteItem)
-            {
-                MessageBox.Show("Nenhum item Encontrado", "`Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                AtualizaGrid();
-            }
-            txtBusca.Clear();
         }
 
         private void BtnAtualizar_Click(object sender, EventArgs e)
         {
-            LerTexto();
-            LimpaCampos();
+            if (!telaAtual.Equals(0))
+            {
+                LerTexto();
+                LimpaCampos();
+            }
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
@@ -106,22 +115,27 @@ namespace Estoque_Empresa
 
         private void BtnExclui_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+
+            if (!telaAtual.Equals(0))
             {
-
-                Estoque excluir = new Estoque();
-                excluir.Nome = CbAlterar.Text.Trim();
-                excluir = ExcluiItem(excluir); // O metodo tem retorno para outras funções
-                if (excluir != null)
+                if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    LimpaCampos();
-                    ConfirmaDestino(excluir);
-                    MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
 
+                    Estoque excluir = new Estoque();
+                    excluir.Nome = CbAlterar.Text.Trim();
+                    excluir = ExcluiItem(excluir); // O metodo tem retorno para outras funções
+                    if (excluir != null)
+                    {
+                        LimpaCampos();
+                        ConfirmaDestino(excluir);
+                        MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
             }
         }
 
+        
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Estoque cadastra = new Estoque();
@@ -262,6 +276,42 @@ namespace Estoque_Empresa
             TelaConfirmacao form = new TelaConfirmacao(i);
             form.ShowDialog();
         }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!telaAtual.Equals(0))
+            {
+                MontaTelaEstoque();
+            }
+        }
+
+        private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!telaAtual.Equals(1))
+            {
+                MontaTelaRegistro();
+            }
+        }
+
+        private void MontaTelaEstoque()
+        {
+            LabelTitulo.Text = "Estoque Informatica";
+            label4.Text = "Local";
+            btnCadastrar.Visible = true;
+            BtnAlterar.Visible = true;
+            telaAtual = (Numerais.Tela)0;
+        }
+        private void MontaTelaRegistro()
+        {
+            LabelTitulo.Text = "Registros Informatica";
+            label4.Text = "Destino do Item";
+            btnCadastrar.Visible = false;
+            BtnAlterar.Visible = false;
+
+            telaAtual = (Numerais.Tela)1;
+        }
+
+       
     }
 }
 

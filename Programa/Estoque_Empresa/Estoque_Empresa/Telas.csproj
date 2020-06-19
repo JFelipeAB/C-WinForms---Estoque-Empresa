@@ -90,13 +90,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\backgroud2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Classes\Classes.csproj">
       <Project>{0207f6c9-eb5d-45b8-8ce4-39c05cb83a4b}</Project>
       <Name>Classes</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\backgroud2.jpg" />
+    <ProjectReference Include="..\Crud\Crud.csproj">
+      <Project>{238f0ccf-6ccb-4cc8-9146-0c6c8c2ccd72}</Project>
+      <Name>Crud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VOS\Entidades.csproj">
+      <Project>{9b73e376-ce81-41b5-b96f-faea8f3b036a}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

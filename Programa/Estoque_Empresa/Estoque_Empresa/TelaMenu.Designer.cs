@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LabelTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BtnExclui = new System.Windows.Forms.Button();
@@ -50,11 +50,15 @@
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.BtnAtualizar = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvLista
@@ -74,22 +78,21 @@
             this.dgvLista.Size = new System.Drawing.Size(889, 344);
             this.dgvLista.TabIndex = 0;
             // 
-            // label1
+            // LabelTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(392, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Estoque Informatica";
+            this.LabelTitulo.AutoSize = true;
+            this.LabelTitulo.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTitulo.ForeColor = System.Drawing.Color.Maroon;
+            this.LabelTitulo.Location = new System.Drawing.Point(392, 9);
+            this.LabelTitulo.Name = "LabelTitulo";
+            this.LabelTitulo.Size = new System.Drawing.Size(303, 39);
+            this.LabelTitulo.TabIndex = 1;
+            this.LabelTitulo.Text = "Estoque Informatica";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.BtnExclui);
             this.groupBox1.Controls.Add(this.txtFornecedor);
             this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.CbAlterar);
@@ -99,8 +102,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.Nud2);
             this.groupBox1.Controls.Add(this.Nud1);
-            this.groupBox1.Controls.Add(this.BtnAlterar);
             this.groupBox1.Controls.Add(this.txtLocalA);
+            this.groupBox1.Controls.Add(this.BtnExclui);
+            this.groupBox1.Controls.Add(this.BtnAlterar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
             this.groupBox1.Location = new System.Drawing.Point(12, 407);
@@ -124,7 +128,7 @@
             // 
             this.BtnExclui.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExclui.ForeColor = System.Drawing.Color.Maroon;
-            this.BtnExclui.Location = new System.Drawing.Point(263, 113);
+            this.BtnExclui.Location = new System.Drawing.Point(456, 112);
             this.BtnExclui.Name = "BtnExclui";
             this.BtnExclui.Size = new System.Drawing.Size(165, 47);
             this.BtnExclui.TabIndex = 21;
@@ -218,7 +222,7 @@
             // BtnAlterar
             // 
             this.BtnAlterar.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAlterar.Location = new System.Drawing.Point(460, 113);
+            this.BtnAlterar.Location = new System.Drawing.Point(263, 112);
             this.BtnAlterar.Name = "BtnAlterar";
             this.BtnAlterar.Size = new System.Drawing.Size(162, 47);
             this.BtnAlterar.TabIndex = 11;
@@ -288,6 +292,31 @@
             this.BtnAtualizar.UseVisualStyleBackColor = true;
             this.BtnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.estoqueToolStripMenuItem,
+            this.registrosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1108, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.estoqueToolStripMenuItem.Text = "Estoque";
+            this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
+            // 
+            // registrosToolStripMenuItem
+            // 
+            this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.registrosToolStripMenuItem.Text = "Registros";
+            this.registrosToolStripMenuItem.Click += new System.EventHandler(this.registrosToolStripMenuItem_Click);
+            // 
             // TelaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,8 +327,10 @@
             this.Controls.Add(this.BtnAtualizar);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LabelTitulo);
             this.Controls.Add(this.dgvLista);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaMenu";
             this.Text = "Estoque 1.1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
@@ -309,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +350,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LabelTitulo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown Nud2;
         private System.Windows.Forms.NumericUpDown Nud1;
@@ -337,5 +370,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
     }
 }

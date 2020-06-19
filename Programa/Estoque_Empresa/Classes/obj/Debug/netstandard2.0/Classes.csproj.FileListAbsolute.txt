@@ -1,9 +1,0 @@
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\netstandard2.0\Classes.deps.json
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\netstandard2.0\Classes.dll
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\netstandard2.0\Classes.pdb
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.csprojAssemblyReference.cache
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.AssemblyInfoInputs.cache
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.AssemblyInfo.cs
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.csproj.CoreCompileInputs.cache
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.dll
-\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\netstandard2.0\Classes.pdb
