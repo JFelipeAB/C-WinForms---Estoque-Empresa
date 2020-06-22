@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
-
+using Classes;
+using System.IO;
 
 namespace Estoque_Empresa
 {
@@ -26,9 +26,8 @@ namespace Estoque_Empresa
             LerTexto();
         }
 
-        private void BtnBuscar_Click(object sender, EventArgs e)
+        private void BtnBuscar_Click_1(object sender, EventArgs e)
         {
-            
             gridLista.Rows.Clear();
             CbAlterar.Items.Clear();
             if (!telaAtual.Equals(0))
@@ -60,7 +59,7 @@ namespace Estoque_Empresa
             }
         }
 
-        private void BtnAtualizar_Click(object sender, EventArgs e)
+        private void BtnAtualizar_Click_1(object sender, EventArgs e)
         {
             if (!telaAtual.Equals(0))
             {
@@ -69,7 +68,7 @@ namespace Estoque_Empresa
             }
         }
 
-        private void BtnAlterar_Click(object sender, EventArgs e)
+        private void BtnAlterar_Click_1(object sender, EventArgs e)
         {
             Estoque itemAlterado = new Estoque();
             itemAlterado.Nome = CbAlterar.Text.Trim();
@@ -110,12 +109,10 @@ namespace Estoque_Empresa
             itemAlterado.Disponivel = qtdDepois.ToString();
             itemAlterado.Manutencao = qtdMaDepois.ToString();
             LimpaCampos();
-
         }
 
-        private void BtnExclui_Click(object sender, EventArgs e)
+        private void BtnExclui_Click_1(object sender, EventArgs e)
         {
-
             if (!telaAtual.Equals(0))
             {
                 if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
@@ -135,8 +132,7 @@ namespace Estoque_Empresa
             }
         }
 
-        
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
             Estoque cadastra = new Estoque();
             cadastra.Nome = CbAlterar.Text.Trim();
@@ -150,6 +146,7 @@ namespace Estoque_Empresa
             LimpaCampos();
             MessageBox.Show("Cadastrado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+       
 
         public void LerTexto()
         {
@@ -312,6 +309,7 @@ namespace Estoque_Empresa
         }
 
        
+
+       
     }
 }
-

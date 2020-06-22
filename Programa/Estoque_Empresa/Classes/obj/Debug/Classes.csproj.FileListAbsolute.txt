@@ -1,0 +1,10 @@
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\Classes.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\Classes.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\Microsoft.Analytics.Interfaces.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\bin\Debug\Microsoft.Analytics.Types.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\Classes.csproj.CopyComplete
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\Classes.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Classes\obj\Debug\Classes.pdb

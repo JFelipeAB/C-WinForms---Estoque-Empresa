@@ -131,7 +131,7 @@
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label5
             // 
@@ -200,7 +200,7 @@
             this.BtnDescartar.TabIndex = 11;
             this.BtnDescartar.Text = "Descartar";
             this.BtnDescartar.UseVisualStyleBackColor = true;
-            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
+            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click_1);
             // 
             // txtLocal
             // 

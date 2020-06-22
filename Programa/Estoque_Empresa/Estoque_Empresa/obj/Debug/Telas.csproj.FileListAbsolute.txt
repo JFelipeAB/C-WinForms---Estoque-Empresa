@@ -1,0 +1,16 @@
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Telas.csprojAssemblyReference.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Estoque_Empresa.Properties.Resources.resources
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Estoque_Empresa.TelaConfirmacao.resources
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Estoque_Empresa.TelaMenu.resources
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Telas.csproj.GenerateResource.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Telas.csproj.CoreCompileInputs.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Estoque_Empresa.exe.config
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Estoque_Empresa.exe
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Estoque_Empresa.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Classes.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Entidades.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Classes.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\bin\Debug\Entidades.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Telas.csproj.CopyComplete
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Estoque_Empresa.exe
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.1\Estoque_Empresa\Programa\Estoque_Empresa\Estoque_Empresa\obj\Debug\Estoque_Empresa.pdb

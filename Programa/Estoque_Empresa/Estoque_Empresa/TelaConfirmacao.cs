@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Classes;
 using Entidades;
 
+
 namespace Estoque_Empresa
 {
     public partial class TelaConfirmacao : Form
@@ -30,14 +31,14 @@ namespace Estoque_Empresa
             nudManutenção.ReadOnly = true;
             nudManutenção.Text = item.Manutencao;
         }
-               
 
-        private void BtnDescartar_Click(object sender, EventArgs e)
+
+        private void BtnDescartar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtDestino == null)
             {
@@ -53,3 +54,4 @@ namespace Estoque_Empresa
         }
     }
 }
+

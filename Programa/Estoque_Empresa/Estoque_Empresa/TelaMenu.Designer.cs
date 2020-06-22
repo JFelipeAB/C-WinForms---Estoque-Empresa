@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.BtnExclui = new System.Windows.Forms.Button();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.CbAlterar = new System.Windows.Forms.ComboBox();
@@ -43,8 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Nud2 = new System.Windows.Forms.NumericUpDown();
             this.Nud1 = new System.Windows.Forms.NumericUpDown();
-            this.BtnAlterar = new System.Windows.Forms.Button();
             this.txtLocalA = new System.Windows.Forms.TextBox();
+            this.BtnExclui = new System.Windows.Forms.Button();
+            this.BtnAlterar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
@@ -64,14 +64,14 @@
             // dgvLista
             // 
             this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(12, 57);
             this.dgvLista.Name = "dgvLista";
@@ -124,18 +124,6 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Observação";
             // 
-            // BtnExclui
-            // 
-            this.BtnExclui.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExclui.ForeColor = System.Drawing.Color.Maroon;
-            this.BtnExclui.Location = new System.Drawing.Point(456, 112);
-            this.BtnExclui.Name = "BtnExclui";
-            this.BtnExclui.Size = new System.Drawing.Size(165, 47);
-            this.BtnExclui.TabIndex = 21;
-            this.BtnExclui.Text = "Excluir";
-            this.BtnExclui.UseVisualStyleBackColor = true;
-            this.BtnExclui.Click += new System.EventHandler(this.BtnExclui_Click);
-            // 
             // txtFornecedor
             // 
             this.txtFornecedor.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +141,7 @@
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // CbAlterar
             // 
@@ -219,6 +208,26 @@
             this.Nud1.Size = new System.Drawing.Size(94, 35);
             this.Nud1.TabIndex = 12;
             // 
+            // txtLocalA
+            // 
+            this.txtLocalA.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocalA.Location = new System.Drawing.Point(446, 58);
+            this.txtLocalA.Name = "txtLocalA";
+            this.txtLocalA.Size = new System.Drawing.Size(298, 35);
+            this.txtLocalA.TabIndex = 13;
+            // 
+            // BtnExclui
+            // 
+            this.BtnExclui.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExclui.ForeColor = System.Drawing.Color.Maroon;
+            this.BtnExclui.Location = new System.Drawing.Point(456, 112);
+            this.BtnExclui.Name = "BtnExclui";
+            this.BtnExclui.Size = new System.Drawing.Size(165, 47);
+            this.BtnExclui.TabIndex = 21;
+            this.BtnExclui.Text = "Excluir";
+            this.BtnExclui.UseVisualStyleBackColor = true;
+            this.BtnExclui.Click += new System.EventHandler(this.BtnExclui_Click_1);
+            // 
             // BtnAlterar
             // 
             this.BtnAlterar.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,14 +237,7 @@
             this.BtnAlterar.TabIndex = 11;
             this.BtnAlterar.Text = "Alterar";
             this.BtnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // txtLocalA
-            // 
-            this.txtLocalA.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocalA.Location = new System.Drawing.Point(446, 58);
-            this.txtLocalA.Name = "txtLocalA";
-            this.txtLocalA.Size = new System.Drawing.Size(298, 35);
-            this.txtLocalA.TabIndex = 13;
+            this.BtnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click_1);
             // 
             // groupBox4
             // 
@@ -271,6 +273,7 @@
             this.BtnBuscar.TabIndex = 3;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click_1);
             // 
             // txtBusca
             // 
@@ -290,7 +293,7 @@
             this.BtnAtualizar.TabIndex = 4;
             this.BtnAtualizar.Text = "Atualizar Tabela";
             this.BtnAtualizar.UseVisualStyleBackColor = true;
-            this.BtnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click);
+            this.BtnAtualizar.Click += new System.EventHandler(this.BtnAtualizar_Click_1);
             // 
             // menuStrip1
             // 
@@ -308,21 +311,18 @@
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
             this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.estoqueToolStripMenuItem.Text = "Estoque";
-            this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
-            this.registrosToolStripMenuItem.Click += new System.EventHandler(this.registrosToolStripMenuItem_Click);
             // 
             // TelaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackgroundImage = global::Estoque_Empresa.Properties.Resources.backgroud2;
             this.ClientSize = new System.Drawing.Size(1108, 585);
             this.Controls.Add(this.BtnAtualizar);
             this.Controls.Add(this.groupBox4);
@@ -375,3 +375,4 @@
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
     }
 }
+
