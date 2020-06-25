@@ -7,10 +7,20 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Crud
+namespace Classes
 {
-    public class Class1
+    public class Numerais
     {
+        public enum Tela
+        {
+            TelaEstoque = 0,
+            TelaRegistro = 1
+        }
 
+        public enum Entidade
+        {
+            Estoque = 0,
+            Registro = 1
+        }
     }
 }

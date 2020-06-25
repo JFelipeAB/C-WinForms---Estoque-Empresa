@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
-using Classes;
 using System.IO;
+
 
 namespace Estoque_Empresa
 {
@@ -44,7 +44,7 @@ namespace Estoque_Empresa
                         gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                         gridLista.Rows[pos].Cells[3].Value = a.Local;
                         gridLista.Rows[pos].Cells[4].Value = a.Data;
-                        gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
+                        gridLista.Rows[pos].Cells[5].Value = a.Observacao;
                         pos++;
                         CbAlterar.Items.Add(a.Nome);
                         ExisteItem = true;
@@ -75,7 +75,7 @@ namespace Estoque_Empresa
             itemAlterado.Disponivel = Nud1.Text.Trim();
             itemAlterado.Manutencao = Nud2.Text.Trim();
             itemAlterado.Local = txtLocalA.Text.Trim();
-            itemAlterado.Fornecedor = txtFornecedor.Text.Trim();
+            itemAlterado.Observacao = txtFornecedor.Text.Trim();
             itemAlterado.Data = DateTime.Now.ToShortDateString();
             Estoque itemAnterior = ExcluiItem(itemAlterado); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
 
@@ -139,7 +139,7 @@ namespace Estoque_Empresa
             cadastra.Disponivel = Nud1.Text.Trim();
             cadastra.Manutencao = Nud2.Text.Trim();
             cadastra.Local = txtLocalA.Text.Trim();
-            cadastra.Fornecedor = txtFornecedor.Text.Trim();
+            cadastra.Observacao = txtFornecedor.Text.Trim();
             cadastra.Data = DateTime.Now.ToShortDateString();
             lista.Add(cadastra);
             SalvaLista();
@@ -166,7 +166,7 @@ namespace Estoque_Empresa
                     a.Manutencao = split[2];
                     a.Local = split[3];
                     a.Data = split[4];
-                    a.Fornecedor = split[5];
+                    a.Observacao = split[5];
 
                     lista.Add(a);
                     contador++;
@@ -204,7 +204,7 @@ namespace Estoque_Empresa
                 gridLista.Rows[pos].Cells[2].Value = a.Manutencao;
                 gridLista.Rows[pos].Cells[3].Value = a.Local;
                 gridLista.Rows[pos].Cells[4].Value = a.Data;
-                gridLista.Rows[pos].Cells[5].Value = a.Fornecedor;
+                gridLista.Rows[pos].Cells[5].Value = a.Observacao;
                 pos++;
             }
         }
@@ -241,7 +241,7 @@ namespace Estoque_Empresa
             List<string> ListaTexo = new List<string>();
             foreach (Estoque b in lista)
             {
-                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local + '|' + b.Data + '|' + b.Fornecedor);
+                ListaTexo.Add(b.Nome + '|' + b.Disponivel + '|' + b.Manutencao + '|' + b.Local + '|' + b.Data + '|' + b.Observacao);
             }
             System.IO.File.WriteAllLines(@"estoque.txt", ListaTexo);
             AtualizaGrid();
@@ -274,7 +274,7 @@ namespace Estoque_Empresa
             form.ShowDialog();
         }
 
-        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        private void estoqueToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!telaAtual.Equals(0))
             {
@@ -282,13 +282,14 @@ namespace Estoque_Empresa
             }
         }
 
-        private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registrosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!telaAtual.Equals(1))
             {
                 MontaTelaRegistro();
             }
         }
+        
 
         private void MontaTelaEstoque()
         {
@@ -296,7 +297,7 @@ namespace Estoque_Empresa
             label4.Text = "Local";
             btnCadastrar.Visible = true;
             BtnAlterar.Visible = true;
-            telaAtual = (Numerais.Tela)0;
+            telaAtual = (int)Numerais.Tela;
         }
         private void MontaTelaRegistro()
         {
@@ -305,11 +306,9 @@ namespace Estoque_Empresa
             btnCadastrar.Visible = false;
             BtnAlterar.Visible = false;
 
-            telaAtual = (Numerais.Tela)1;
+            telaAtual = (int)Numerais.Tela;
         }
 
-       
-
-       
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,9 +8,12 @@ namespace Entidades
     public class Estoque : Item
     {
 
-        private string fornecedor;
+        private string local;
 
-        public string Fornecedor { get; set; }
+        public string Local { get; set; }
+       
+       public  Numerais.Entidade tipo = Numerais.Entidade.Estoque; 
+        tipo
 
     }
 }

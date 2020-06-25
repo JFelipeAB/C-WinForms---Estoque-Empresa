@@ -45,7 +45,14 @@
   <ItemGroup>
     <Compile Include="Conexao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio.cs" />
+    <Compile Include="RepositorioAccess.cs" />
+    <Compile Include="RepositorioTXTcs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{bf77f3ce-f1a2-4c68-b661-113b11713d07}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
