@@ -1,5 +1,4 @@
-﻿using Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,7 +12,6 @@ namespace Entidades
         public string Local { get; set; }
        
        public  Numerais.Entidade tipo = Numerais.Entidade.Estoque; 
-        tipo
-
+       
     }
 }

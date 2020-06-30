@@ -1,5 +1,4 @@
 ﻿using System;
-using Classes;
 using Entidades;
 
 namespace Entidades

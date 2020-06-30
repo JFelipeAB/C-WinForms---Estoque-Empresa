@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Classes;
 using Entidades;
 
 
@@ -15,15 +14,15 @@ namespace Estoque_Empresa
 {
     public partial class TelaConfirmacao : Form
     {
-        public Estoque item;
-        public TelaConfirmacao(Estoque i)
+        public Registro item;
+        public TelaConfirmacao(Item i)
         {
             InitializeComponent();
-            item = i;
+            item = i as Registro;
             txtFornecedor.ReadOnly = true;
-            txtFornecedor.Text = item.Fornecedor;
+            txtFornecedor.Text = item.Observacao;
             txtLocal.ReadOnly = true;
-            txtLocal.Text = item.Local;
+            txtLocal.Text = item.Destino;
             txtNome.ReadOnly = true;
             txtNome.Text = item.Nome;
             nudDisponivel.ReadOnly = true;
@@ -47,7 +46,7 @@ namespace Estoque_Empresa
             else
             {
                 string texto = "";
-                texto = "\n" + item.Nome + '|' + item.Disponivel + '|' + item.Manutencao + '|' + item.Data + '|' + item.Fornecedor + '|' + txtDestino.Text;
+                texto = "\n" + item.Nome + '|' + item.Disponivel + '|' + item.Manutencao + '|' + item.Data + '|' + item.Destino + '|' + txtDestino.Text;
                 System.IO.File.AppendAllText(@"registros.txt", texto);
                 this.Close();
             }

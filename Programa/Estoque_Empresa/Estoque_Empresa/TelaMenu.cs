@@ -105,10 +105,10 @@ namespace Estoque_Empresa
                             itemAlterado.Observacao = txtFornecedor.Text.Trim();
                             itemAlterado.Data = DateTime.Now.ToShortDateString();
                             GeraRegistro(itemAlterado);
-                            CRUD.Deletar(id, (string)telaAtual);
+                            CRUD.Deletar(id, telaAtual.ToString());
                             break;
                         case 1:
-                        CRUD.Deletar(id, (string)telaAtual);
+                        CRUD.Deletar(id, telaAtual.ToString());
                         break;
                     }
                 }
@@ -161,18 +161,16 @@ namespace Estoque_Empresa
 
         public bool ExisteItem(int id)
         {
-
             return true;
         }
 
         public void MontaGrid(string NomeItem)
         {
-            ListaTodosDados = CRUD.Listar(NomeItem, (string)telaAtual);
+            DataTable ListaTodosDado = CRUD.Listar(NomeItem, telaAtual.ToString());
             gridLista = dgvLista;// Atribui o elemento da tela
             this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);
             gridLista.Rows.Clear();
-            gridLista.Columns.Clear();
-
+            gridLista.Columns.Clear();            
             int pos = 0;
             bool ExisteItem = true;
             switch ((int)telaAtual) // pega a aba atual
@@ -196,19 +194,20 @@ namespace Estoque_Empresa
                         gridLista.Columns[3].Width = 90;
                         gridLista.Columns[4].Width = 200;
                         gridLista.Columns[5].Width = 90;
-                        foreach (Estoque a in ListaTodosDados)
-                        {
-                            gridLista.Rows.Add();
-                            gridLista.Rows[pos].Cells[0].Value = a.Id;
-                            gridLista.Rows[pos].Cells[1].Value = a.Nome;
-                            gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
-                            gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
-                            gridLista.Rows[pos].Cells[4].Value = a.Local;
-                            gridLista.Rows[pos].Cells[5].Value = a.Data;
-                            gridLista.Rows[pos].Cells[6].Value = a.Observacao;
-                            pos++;
-                            CbAlterar.Items.Add(a.Nome);
-                        }
+                        gridLista.DataSource = ListaTodosDado;
+                        //foreach (Estoque a in ListaTodosDados)
+                        //{
+                        //    gridLista.Rows.Add();
+                        //    gridLista.Rows[pos].Cells[0].Value = a.Id;
+                        //    gridLista.Rows[pos].Cells[1].Value = a.Nome;
+                        //    gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
+                        //    gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
+                        //    gridLista.Rows[pos].Cells[4].Value = a.Local;
+                        //    gridLista.Rows[pos].Cells[5].Value = a.Data;
+                        //    gridLista.Rows[pos].Cells[6].Value = a.Observacao;
+                        //    pos++;
+                        //    CbAlterar.Items.Add(a.Nome);
+                        //}
                     }
                     break;
                 case 1:
@@ -265,7 +264,6 @@ namespace Estoque_Empresa
 
         public void GeraRegistro(Estoque i)
         {
-
             TelaConfirmacao form = new TelaConfirmacao(i);
             form.ShowDialog();
         }
@@ -276,7 +274,7 @@ namespace Estoque_Empresa
             label4.Text = "Local";
             btnCadastrar.Visible = true;
             BtnAlterar.Visible = true;
-            telaAtual = (int)Numerais.Entidade.Estoque;
+            telaAtual = Numerais.Entidade.Estoque;
         }
 
         private void MontaTelaRegistro()
@@ -286,9 +284,8 @@ namespace Estoque_Empresa
             btnCadastrar.Visible = false;
             BtnAlterar.Visible = false;
 
-            telaAtual = (int)Numerais.Entidade.Registro;
+            telaAtual = Numerais.Entidade.Registro;
         }
-
         
     }
 }

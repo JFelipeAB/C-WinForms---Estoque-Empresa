@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using Entidades;
 using DAOs;
-using Classes;
+using System.Data;
+
 
 
 namespace Crud
@@ -52,7 +53,7 @@ namespace Crud
                     //    break;
             }            
         }
-        static public List<Item> Listar(string nome, string tabela)
+        static public DataTable Listar(string nome, string tabela)
             
         {
             return RepositorioAccess.Select(nome, tabela);
