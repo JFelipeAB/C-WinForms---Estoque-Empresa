@@ -104,6 +104,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Crud\Crud.csproj">
+      <Project>{bd31b25f-a687-4d32-a6e6-fca3bf2dcd6d}</Project>
+      <Name>Crud</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{bf77f3ce-f1a2-4c68-b661-113b11713d07}</Project>
       <Name>Entidades</Name>

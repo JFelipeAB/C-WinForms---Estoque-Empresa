@@ -18,13 +18,13 @@ namespace Crud
         static public void Inserir(Item item)
         {
                         
-            switch ((int)item.Tipo)
+            switch ((int)item.Tipo) // pega o tipo de entidade que o metodo recebe
             {
-                case 1:
-                    DAOs.RepositorioAccess.Insert(item as Estoque);
+                case 0:
+                    RepositorioAccess.Insert(item as Estoque);
                     break;
-                case 2:
-                    DAOs.RepositorioAccess.Insert(item as Registro);
+                case 1:
+                    RepositorioAccess.Insert(item as Registro);
                     break;
                 //default:
                 //    throw new Exception("Bussines.CRUD Entidade com tipação invalida")  ;
@@ -32,21 +32,30 @@ namespace Crud
             }
         }
        
-        static public void Deletar( Item item )
+        static public void Deletar(int id, string tabela )
         {
-
-            RepositorioAccess.Delet(sql);
+            RepositorioAccess.Delet(id, tabela);                     
         }
         
         static public void Alterar(Item item)
         {
-
-            RepositorioAccess.Update(sql);
+            switch ((int)item.Tipo) // pega o tipo de entidade que o metodo recebe
+            {
+                case 0:
+                    RepositorioAccess.Update(item as Estoque);
+                    break;
+                case 1:
+                    RepositorioAccess.Update(item as Registro);
+                    break;
+                    //default:
+                    //    throw new Exception("Bussines.CRUD Entidade com tipação invalida")  ;
+                    //    break;
+            }            
         }
-        static public void Listar(List<Item> itens)
+        static public List<Item> Listar(string nome, string tabela)
+            
         {
-
-            RepositorioAccess.Select(sql);
+            return RepositorioAccess.Select(nome, tabela);
         }
     }
 }

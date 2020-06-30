@@ -1,0 +1,2 @@
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Crud\obj\Debug\Crud.csprojAssemblyReference.cache
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Crud\obj\Debug\Crud.csproj.CoreCompileInputs.cache

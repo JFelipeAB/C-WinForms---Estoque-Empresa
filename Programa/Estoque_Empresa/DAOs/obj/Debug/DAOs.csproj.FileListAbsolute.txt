@@ -1,0 +1,2 @@
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\obj\Debug\DAOs.csprojAssemblyReference.cache
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\obj\Debug\DAOs.csproj.CoreCompileInputs.cache

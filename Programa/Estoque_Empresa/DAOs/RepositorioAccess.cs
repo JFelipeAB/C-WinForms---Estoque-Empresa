@@ -43,9 +43,19 @@ namespace DAOs
 
             RepositorioAccess.Escreve(sql);
         }
+        static public void Update(Registro item)
+        {
+            string sql = "";
+
+
+            RepositorioAccess.Escreve(sql);
+        }
+
+
+
         static public List<Item> Select(string nome, string tabela)
         {
-            List < Item > lista= new List<Item>();
+            List < Item > lista = new List<Item>();
             string sql = "";
 
 
@@ -53,6 +63,7 @@ namespace DAOs
             RepositorioAccess.Escreve(sql);
             return lista;
         }
+
         static private void Escreve(string text)
         {
             Conexao.AtivarConexao();

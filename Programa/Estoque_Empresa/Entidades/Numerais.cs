@@ -11,12 +11,7 @@ namespace Classes
 {
     public class Numerais
     {
-        public enum Tela
-        {
-            TelaEstoque = 0,
-            TelaRegistro = 1
-        }
-
+       
         public enum Entidade
         {
             Estoque = 0,
