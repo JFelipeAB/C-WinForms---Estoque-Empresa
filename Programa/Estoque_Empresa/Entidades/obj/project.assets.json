@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_EmpresaOld\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_EmpresaOld\\Entidades\\Entidades.csproj",
+      "projectPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-      "outputPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_EmpresaOld\\Entidades\\obj\\",
+      "outputPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",

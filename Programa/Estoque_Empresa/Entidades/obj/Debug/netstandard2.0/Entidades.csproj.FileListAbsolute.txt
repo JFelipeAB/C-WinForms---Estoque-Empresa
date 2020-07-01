@@ -11,3 +11,8 @@
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_EmpresaOld\Entidades\bin\Debug\netstandard2.0\Entidades.pdb
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_EmpresaOld\Entidades\obj\Debug\netstandard2.0\Entidades.dll
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_EmpresaOld\Entidades\obj\Debug\netstandard2.0\Entidades.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.deps.json
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.dll
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.dll
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.pdb
