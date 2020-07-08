@@ -169,32 +169,39 @@ namespace Estoque_Empresa
             DataTable ListaTodosDado = CRUD.Listar(NomeItem, telaAtual.ToString());
             gridLista = dgvLista;// Atribui o elemento da tela
             this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);
-            gridLista.Rows.Clear();
+            //gridLista.Rows.Clear();
             gridLista.Columns.Clear();            
             int pos = 0;
             bool ExisteItem = true;
             switch ((int)telaAtual) // pega a aba atual
             {
                 case 0:
-                    if (ListaTodosDados.Count == 0)
+                    if (ListaTodosDados == null)
                         ExisteItem = false;
                     else
                     {
-                        gridLista.Columns.Add("ID", "ID");
-                        gridLista.Columns.Add("Item", "Item"); //nome das colunas
-                        gridLista.Columns.Add("Disponivel", "Disponivel");
-                        gridLista.Columns.Add("Manutenção", "Manutenção");
-                        gridLista.Columns.Add("Local", "Local");
-                        gridLista.Columns.Add("Data", "Data");
-                        gridLista.Columns.Add("Observação", "Observação");
+                        //gridLista.Columns.Add("ID", "ID");
+                        //gridLista.Columns.Add("Item", "Item"); //nome das colunas
+                        //gridLista.Columns.Add("Disponivel", "Disponivel");
+                        //gridLista.Columns.Add("Manutenção", "Manutenção");
+                        //gridLista.Columns.Add("Local", "Local");
+                        //gridLista.Columns.Add("Data", "Data");
+                        //gridLista.Columns.Add("Observação", "Observação");
 
-                        gridLista.Columns[0].Width = 20;
-                        gridLista.Columns[1].Width = 200; //tamanho das colunas
-                        gridLista.Columns[2].Width = 90;
-                        gridLista.Columns[3].Width = 90;
-                        gridLista.Columns[4].Width = 200;
-                        gridLista.Columns[5].Width = 90;
+                        //gridLista.Columns[0].Width = 20;
+                        //gridLista.Columns[1].Width = 200; //tamanho das colunas
+                        //gridLista.Columns[2].Width = 90;
+                        //gridLista.Columns[3].Width = 90;
+                        //gridLista.Columns[4].Width = 200;
+                        //gridLista.Columns[5].Width = 90;
                         gridLista.DataSource = ListaTodosDado;
+                        gridLista.AutoResizeColumns();
+
+                        // Configure the details DataGridView so that its columns automatically
+                        // adjust their widths when the data changes.
+                        gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
                         //foreach (Estoque a in ListaTodosDados)
                         //{
                         //    gridLista.Rows.Add();
@@ -211,37 +218,45 @@ namespace Estoque_Empresa
                     }
                     break;
                 case 1:
-                    if (ListaTodosDados.Count == 0)
+                    if (ListaTodosDados == null)
                         ExisteItem = false;
                     else
                     {
-                        gridLista.Columns.Add("ID", "ID");
-                        gridLista.Columns.Add("Item", "Item"); //nome das colunas
-                        gridLista.Columns.Add("Disponivel", "Disponivel");
-                        gridLista.Columns.Add("Manutenção", "Manutenção");
-                        gridLista.Columns.Add("Destino", "Destino");
-                        gridLista.Columns.Add("Data", "Data");
-                        gridLista.Columns.Add("Observação", "Observação");
+                        //gridLista.Columns.Add("ID", "ID");
+                        //gridLista.Columns.Add("Item", "Item"); //nome das colunas
+                        //gridLista.Columns.Add("Disponivel", "Disponivel");
+                        //gridLista.Columns.Add("Manutenção", "Manutenção");
+                        //gridLista.Columns.Add("Local", "Local");
+                        //gridLista.Columns.Add("Data", "Data");
+                        //gridLista.Columns.Add("Observação", "Observação");
 
-                        gridLista.Columns[0].Width = 20;
-                        gridLista.Columns[1].Width = 200; //tamanho das colunas
-                        gridLista.Columns[2].Width = 90;
-                        gridLista.Columns[3].Width = 90;
-                        gridLista.Columns[4].Width = 200;
-                        gridLista.Columns[5].Width = 90;
-                        foreach (Registro a in ListaTodosDados)
-                        {
-                            gridLista.Rows.Add();
-                            gridLista.Rows[pos].Cells[0].Value = a.Id;
-                            gridLista.Rows[pos].Cells[1].Value = a.Nome;
-                            gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
-                            gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
-                            gridLista.Rows[pos].Cells[4].Value = a.Destino;
-                            gridLista.Rows[pos].Cells[5].Value = a.Data;
-                            gridLista.Rows[pos].Cells[6].Value = a.Observacao;
-                            pos++;
-                            CbAlterar.Items.Add(a.Nome);
-                        }
+                        //gridLista.Columns[0].Width = 20;
+                        //gridLista.Columns[1].Width = 200; //tamanho das colunas
+                        //gridLista.Columns[2].Width = 90;
+                        //gridLista.Columns[3].Width = 90;
+                        //gridLista.Columns[4].Width = 200;
+                        //gridLista.Columns[5].Width = 90;
+                        gridLista.DataSource = ListaTodosDado;
+                        gridLista.AutoResizeColumns();
+
+                        // Configure the details DataGridView so that its columns automatically
+                        // adjust their widths when the data changes.
+                        gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+
+                        //foreach (Estoque a in ListaTodosDados)
+                        //{
+                        //    gridLista.Rows.Add();
+                        //    gridLista.Rows[pos].Cells[0].Value = a.Id;
+                        //    gridLista.Rows[pos].Cells[1].Value = a.Nome;
+                        //    gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
+                        //    gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
+                        //    gridLista.Rows[pos].Cells[4].Value = a.Local;
+                        //    gridLista.Rows[pos].Cells[5].Value = a.Data;
+                        //    gridLista.Rows[pos].Cells[6].Value = a.Observacao;
+                        //    pos++;
+                        //    CbAlterar.Items.Add(a.Nome);
+                        //}
                     }
                     break;
             }
@@ -286,6 +301,12 @@ namespace Estoque_Empresa
 
             telaAtual = Numerais.Entidade.Registro;
         }
-        
+
+        private void TelaMenu_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'baseDataSet1.Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.estoqueTableAdapter.Fill(this.baseDataSet1.Estoque);
+
+        }
     }
 }

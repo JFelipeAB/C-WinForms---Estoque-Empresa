@@ -15,10 +15,10 @@
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\DAOs.dll
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\DAOs.pdb
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Entidades.dll
-\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Interfaces.dll
-\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
-\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Types.dll
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Entidades.pdb
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\obj\Debug\DAOs.csproj.CopyComplete
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\obj\Debug\DAOs.dll
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\obj\Debug\DAOs.pdb
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Interfaces.dll
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+\\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\DAOs\bin\Debug\Microsoft.Analytics.Types.dll

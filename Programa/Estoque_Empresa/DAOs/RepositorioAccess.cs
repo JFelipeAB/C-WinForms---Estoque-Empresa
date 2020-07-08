@@ -33,11 +33,11 @@ namespace DAOs
             //conn.Close();
 
             OleDbConnection conn = new OleDbConnection(Conexao.pathPadrao);
-            
 
-            string sql = "INSERT into Estoque ( nome, Disponivel, Manutencao, Local, Data, Observacao) Values ";
+
+            string sql = $"insert into Estoque(nome, disponivel, manutencao, local, Data, observacao) Values('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
             //sql += $"('{item.Nome}' , {item.Disponivel} , {item.Manutencao}, '{item.Local}' , #{item.Data}# , '{item.Observacao}')";
-            sql += $"('teste' , 1 , 1, 'localteste' , #'26/07/2020'# , 'Observacao')";
+            //sql += $"('teste' , 1 , 1, 'localteste' , 'Observacao')"; //#'26/07/2020'# , 
             OleDbCommand cmd = new OleDbCommand(sql);
             cmd.Connection = conn;
 
@@ -84,30 +84,51 @@ namespace DAOs
 
         static public DataTable Select(string nome, string tabela)
         {
-            //define a string de conexao com provedor caminho e nome do banco de dados
-            string strProvider = Conexao.pathPadrao; //"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\\dados\\Cadastro.mdb";
-            //define a instrução SQL
-            string strSql = $"SELECT {nome} FROM {tabela}";
+            ////define a string de conexao com provedor caminho e nome do banco de dados
+            //string strProvider = Conexao.pathPadrao; //"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\\dados\\Cadastro.mdb";
+            ////define a instrução SQL
+            //string strSql = $"SELECT * FROM {tabela}";
 
-            //cria a conexão com o banco de dados
-            OleDbConnection con = new OleDbConnection(strProvider);
-            //cria o objeto command para executar a instruçao sql
-            OleDbCommand cmd = new OleDbCommand(strSql, con);
+            ////cria a conexão com o banco de dados
+            //OleDbConnection con = new OleDbConnection(strProvider);
+            ////cria o objeto command para executar a instruçao sql
+            //OleDbCommand cmd = new OleDbCommand(strSql, con);
 
-            //abre a conexao
-            con.Open();
+            ////abre a conexao
+            //con.Open();
 
-            //define o tipo do comando
-            cmd.CommandType = CommandType.Text;
-            //cria um dataadapter
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            ////define o tipo do comando
+            //cmd.CommandType = CommandType.Text;
+            ////cria um dataadapter
+            //OleDbDataAdapter da = new OleDbDataAdapter(cmd);
 
-            //cria um objeto datatable
-            DataTable dados = new DataTable();
+            ////cria um objeto datatable
+            //DataTable dados = new DataTable();
 
-            //preenche o datatable via dataadapter
-            da.Fill(dados);
-            return dados;
+            //con.Close();
+            ////preenche o datatable via dataadapter
+            //da.Fill(dados);
+            //return dados;
+
+
+            using (OleDbConnection dataConnection = new OleDbConnection(Conexao.pathPadrao))
+            {
+                using (OleDbCommand dataCommand = dataConnection.CreateCommand())
+                {
+                    dataCommand.CommandText = $"SELECT * FROM {tabela}";
+                    dataConnection.Open();
+                    //dataCommand.Parameters.AddWithValue("@ID", ID);
+                    DataTable dados = new DataTable();
+                    OleDbDataAdapter adapter = new OleDbDataAdapter();
+                    adapter.SelectCommand = dataCommand;
+                    adapter.Fill(dados);
+                    return dados;
+                    //bindingSource1.DataSource = dados;
+                    //dataGridView1.AutoResizeColums(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                    //dataGridView1.ReadOnly = true;
+                    //dataGridView1.DataSource = bindingSource1;
+                }
+            }
         }
 
         static private void Escreve(string text)

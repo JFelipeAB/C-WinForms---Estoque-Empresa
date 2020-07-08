@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -53,19 +56,25 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.baseDataSet = new Estoque_Empresa.BaseDataSet();
+            this.baseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.baseDataSet1 = new Estoque_Empresa.BaseDataSet1();
+            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estoqueTableAdapter = new Estoque_Empresa.BaseDataSet1TableAdapters.EstoqueTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLista
             // 
-            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,6 +126,25 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alterar Cadastrar e  Excluir";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 27);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Id";
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(6, 60);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(56, 35);
+            this.txtID.TabIndex = 22;
             // 
             // label6
             // 
@@ -324,24 +352,29 @@
             this.registrosToolStripMenuItem.Text = "Registros";
             this.registrosToolStripMenuItem.Click += new System.EventHandler(this.registrosToolStripMenuItem_Click_1);
             // 
-            // txtID
+            // baseDataSet
             // 
-            this.txtID.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(6, 60);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(56, 35);
-            this.txtID.TabIndex = 22;
+            this.baseDataSet.DataSetName = "BaseDataSet";
+            this.baseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // baseDataSetBindingSource
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 27);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Id";
+            this.baseDataSetBindingSource.DataSource = this.baseDataSet;
+            this.baseDataSetBindingSource.Position = 0;
+            // 
+            // baseDataSet1
+            // 
+            this.baseDataSet1.DataSetName = "BaseDataSet1";
+            this.baseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // estoqueBindingSource
+            // 
+            this.estoqueBindingSource.DataMember = "Estoque";
+            this.estoqueBindingSource.DataSource = this.baseDataSet1;
+            // 
+            // estoqueTableAdapter
+            // 
+            this.estoqueTableAdapter.ClearBeforeFill = true;
             // 
             // TelaMenu
             // 
@@ -358,6 +391,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaMenu";
             this.Text = "Estoque 1.1";
+            this.Load += new System.EventHandler(this.TelaMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -367,6 +401,10 @@
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,6 +438,11 @@
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.BindingSource baseDataSetBindingSource;
+        private BaseDataSet baseDataSet;
+        private BaseDataSet1 baseDataSet1;
+        private System.Windows.Forms.BindingSource estoqueBindingSource;
+        private BaseDataSet1TableAdapters.EstoqueTableAdapter estoqueTableAdapter;
     }
 }
 
