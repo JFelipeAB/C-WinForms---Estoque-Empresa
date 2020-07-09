@@ -16,14 +16,13 @@ namespace Estoque_Empresa
 {
     public partial class TelaMenu : Form
     {
-        public DataGridView gridLista;
-        public List<Item> ListaTodosDados = new List<Item>();
+        public DataGridView gridLista;      
         public Numerais.Entidade telaAtual = Numerais.Entidade.Estoque;
-        public string TodosOsDados = "*";
+        public string ultimaPesquisa = null;
         public TelaMenu()
         {
             InitializeComponent();
-            MontaGrid(TodosOsDados);
+            MontaGrid(null);
         }
 
         private void BtnBuscar_Click_1(object sender, EventArgs e)
@@ -35,9 +34,11 @@ namespace Estoque_Empresa
         }
 
         private void BtnAtualizar_Click_1(object sender, EventArgs e)
-        {           
-                MontaGrid(TodosOsDados);
-                LimpaCampos();           
+        {
+            ultimaPesquisa = null;
+            MontaGrid(null);
+            LimpaCampos();
+            
         }
 
         private void BtnAlterar_Click_1(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace Estoque_Empresa
             //itemAlterado.Disponivel = qtdDepois.ToString();
             //itemAlterado.Manutencao = qtdMaDepois.ToString();            
             LimpaCampos();
-            MontaGrid(TodosOsDados);
+            MontaGrid(ultimaPesquisa);
         }
 
         private void BtnExclui_Click_1(object sender, EventArgs e)
@@ -128,7 +129,7 @@ namespace Estoque_Empresa
             cadastra.Observacao = txtFornecedor.Text.Trim();
             cadastra.Data = DateTime.Now.ToShortDateString();
             CRUD.Inserir(cadastra);
-            MontaGrid(TodosOsDados);
+            MontaGrid(ultimaPesquisa);
             LimpaCampos();
             MessageBox.Show("Cadastrado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -137,6 +138,7 @@ namespace Estoque_Empresa
         {
             if ((int)telaAtual != 0)
             {
+                ultimaPesquisa = null;
                 MontaTelaEstoque();
             }
         }
@@ -145,6 +147,7 @@ namespace Estoque_Empresa
         {
             if ((int)telaAtual != 1)
             {
+                ultimaPesquisa = null;
                 MontaTelaRegistro();
             }
         }
@@ -166,17 +169,17 @@ namespace Estoque_Empresa
 
         public void MontaGrid(string NomeItem)
         {
+                        
             DataTable ListaTodosDado = CRUD.Listar(NomeItem, telaAtual.ToString());
             gridLista = dgvLista;// Atribui o elemento da tela
             this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);
             //gridLista.Rows.Clear();
-            gridLista.Columns.Clear();            
-            int pos = 0;
+            gridLista.Columns.Clear();  
             bool ExisteItem = true;
             switch ((int)telaAtual) // pega a aba atual
             {
                 case 0:
-                    if (ListaTodosDados == null)
+                    if (ListaTodosDado == null)
                         ExisteItem = false;
                     else
                     {
@@ -196,11 +199,7 @@ namespace Estoque_Empresa
                         //gridLista.Columns[5].Width = 90;
                         gridLista.DataSource = ListaTodosDado;
                         gridLista.AutoResizeColumns();
-
-                        // Configure the details DataGridView so that its columns automatically
-                        // adjust their widths when the data changes.
                         gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
 
                         //foreach (Estoque a in ListaTodosDados)
                         //{
@@ -218,45 +217,15 @@ namespace Estoque_Empresa
                     }
                     break;
                 case 1:
-                    if (ListaTodosDados == null)
+                    if (ListaTodosDado == null)
                         ExisteItem = false;
                     else
-                    {
-                        //gridLista.Columns.Add("ID", "ID");
-                        //gridLista.Columns.Add("Item", "Item"); //nome das colunas
-                        //gridLista.Columns.Add("Disponivel", "Disponivel");
-                        //gridLista.Columns.Add("Manutenção", "Manutenção");
-                        //gridLista.Columns.Add("Local", "Local");
-                        //gridLista.Columns.Add("Data", "Data");
-                        //gridLista.Columns.Add("Observação", "Observação");
-
-                        //gridLista.Columns[0].Width = 20;
-                        //gridLista.Columns[1].Width = 200; //tamanho das colunas
-                        //gridLista.Columns[2].Width = 90;
-                        //gridLista.Columns[3].Width = 90;
-                        //gridLista.Columns[4].Width = 200;
-                        //gridLista.Columns[5].Width = 90;
-                        gridLista.DataSource = ListaTodosDado;
+                    {   gridLista.DataSource = ListaTodosDado;
                         gridLista.AutoResizeColumns();
 
                         // Configure the details DataGridView so that its columns automatically
                         // adjust their widths when the data changes.
                         gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-
-                        //foreach (Estoque a in ListaTodosDados)
-                        //{
-                        //    gridLista.Rows.Add();
-                        //    gridLista.Rows[pos].Cells[0].Value = a.Id;
-                        //    gridLista.Rows[pos].Cells[1].Value = a.Nome;
-                        //    gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
-                        //    gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
-                        //    gridLista.Rows[pos].Cells[4].Value = a.Local;
-                        //    gridLista.Rows[pos].Cells[5].Value = a.Data;
-                        //    gridLista.Rows[pos].Cells[6].Value = a.Observacao;
-                        //    pos++;
-                        //    CbAlterar.Items.Add(a.Nome);
-                        //}
                     }
                     break;
             }
@@ -290,6 +259,7 @@ namespace Estoque_Empresa
             btnCadastrar.Visible = true;
             BtnAlterar.Visible = true;
             telaAtual = Numerais.Entidade.Estoque;
+            MontaGrid(null);
         }
 
         private void MontaTelaRegistro()
@@ -298,15 +268,10 @@ namespace Estoque_Empresa
             label4.Text = "Destino do Item";
             btnCadastrar.Visible = false;
             BtnAlterar.Visible = false;
-
             telaAtual = Numerais.Entidade.Registro;
+            MontaGrid(null);
         }
 
-        private void TelaMenu_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'baseDataSet1.Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.estoqueTableAdapter.Fill(this.baseDataSet1.Estoque);
-
-        }
+        
     }
 }

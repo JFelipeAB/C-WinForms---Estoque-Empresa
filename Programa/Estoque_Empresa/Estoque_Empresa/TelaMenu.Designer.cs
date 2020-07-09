@@ -58,9 +58,7 @@
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baseDataSet = new Estoque_Empresa.BaseDataSet();
             this.baseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.baseDataSet1 = new Estoque_Empresa.BaseDataSet1();
             this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estoqueTableAdapter = new Estoque_Empresa.BaseDataSet1TableAdapters.EstoqueTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
@@ -69,7 +67,6 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -364,17 +361,15 @@
             // 
             // baseDataSet1
             // 
-            this.baseDataSet1.DataSetName = "BaseDataSet1";
-            this.baseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+           // 
             // estoqueBindingSource
             // 
             this.estoqueBindingSource.DataMember = "Estoque";
-            this.estoqueBindingSource.DataSource = this.baseDataSet1;
+           
             // 
             // estoqueTableAdapter
             // 
-            this.estoqueTableAdapter.ClearBeforeFill = true;
+          
             // 
             // TelaMenu
             // 
@@ -390,8 +385,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaMenu";
-            this.Text = "Estoque 1.1";
-            this.Load += new System.EventHandler(this.TelaMenu_Load);
+            this.Text = "Estoque 1.1";           
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -402,8 +396,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();            
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -440,9 +433,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.BindingSource baseDataSetBindingSource;
         private BaseDataSet baseDataSet;
-        private BaseDataSet1 baseDataSet1;
         private System.Windows.Forms.BindingSource estoqueBindingSource;
-        private BaseDataSet1TableAdapters.EstoqueTableAdapter estoqueTableAdapter;
-    }
+        }
 }
 

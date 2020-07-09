@@ -53,10 +53,16 @@ namespace Crud
                     //    break;
             }            
         }
-        static public DataTable Listar(string nome, string tabela)
-            
+        static public DataTable Listar(string nome, string tabela)            
         {
-            return RepositorioAccess.Select(nome, tabela);
+            if (nome == null)
+            {
+                return RepositorioAccess.Select(tabela);
+            }
+            else 
+            {
+                return RepositorioAccess.Select(nome, tabela);
+            }           
         }
     }
 }
