@@ -1,4 +1,4 @@
 ﻿1.0 - Estrutura de codigo simples. Crud de estoque, Repositorio Arquivo texto 
 1.1 - Estrutura de código em projetos. apenas salvando registros.
 desenvolvimento 1.3 - Repositorio em Acess, Aba registros.
-planejamento 1.4 - Crud registros, filtro para buscar por diferentes campos.
+planejamento 1.4 - importar registros para excel registros, filtro para buscar não apenas pelo nome.

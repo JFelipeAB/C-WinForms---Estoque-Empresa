@@ -56,7 +56,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.baseDataSet = new Estoque_Empresa.BaseDataSet();
+            //this.baseDataSet = new Estoque_Empresa.BaseDataSet();
             this.baseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
@@ -64,8 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();           
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +84,7 @@
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.Size = new System.Drawing.Size(889, 344);
             this.dgvLista.TabIndex = 0;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick_1);
             // 
             // LabelTitulo
             // 
@@ -351,25 +351,16 @@
             // 
             // baseDataSet
             // 
-            this.baseDataSet.DataSetName = "BaseDataSet";
-            this.baseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // baseDataSetBindingSource
             // 
-            this.baseDataSetBindingSource.DataSource = this.baseDataSet;
+            
             this.baseDataSetBindingSource.Position = 0;
             // 
-            // baseDataSet1
-            // 
-           // 
             // estoqueBindingSource
             // 
             this.estoqueBindingSource.DataMember = "Estoque";
-           
-            // 
-            // estoqueTableAdapter
-            // 
-          
             // 
             // TelaMenu
             // 
@@ -385,7 +376,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaMenu";
-            this.Text = "Estoque 1.1";           
+            this.Text = "Estoque 1.1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -395,8 +386,8 @@
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();            
+            
+            ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -432,7 +423,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.BindingSource baseDataSetBindingSource;
-        private BaseDataSet baseDataSet;
+        //private BaseDataSet baseDataSet;
         private System.Windows.Forms.BindingSource estoqueBindingSource;
         }
 }

@@ -27,10 +27,10 @@ namespace Estoque_Empresa
 
         private void BtnBuscar_Click_1(object sender, EventArgs e)
         {
-            gridLista.Rows.Clear();
+            
             CbAlterar.Items.Clear();
-            string busca = txtBusca.Text.ToString().Trim().ToUpper();
-            MontaGrid(busca);
+            ultimaPesquisa = txtBusca.Text.ToString().Trim().ToUpper();
+            MontaGrid(ultimaPesquisa);
         }
 
         private void BtnAtualizar_Click_1(object sender, EventArgs e)
@@ -99,23 +99,24 @@ namespace Estoque_Empresa
                     {
                         case 0:
                             Estoque itemAlterado = new Estoque();
+                            itemAlterado.Id = id;
                             itemAlterado.Nome = CbAlterar.Text.Trim();
                             itemAlterado.Disponivel = Nud1.Text.Trim();
                             itemAlterado.Manutencao = Nud2.Text.Trim();
                             itemAlterado.Local = txtLocalA.Text.Trim();
                             itemAlterado.Observacao = txtFornecedor.Text.Trim();
                             itemAlterado.Data = DateTime.Now.ToShortDateString();
-                            GeraRegistro(itemAlterado);
+                           // GeraRegistro(itemAlterado);
                             CRUD.Deletar(id, telaAtual.ToString());
                             break;
                         case 1:
                         CRUD.Deletar(id, telaAtual.ToString());
                         break;
                     }
-                }
-            //} 
-            //else
-            //    MessageBox.Show("Item não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }        
+            else
+                MessageBox.Show("Item não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MontaGrid(ultimaPesquisa);
             MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -143,6 +144,7 @@ namespace Estoque_Empresa
             }
         }
 
+
         private void registrosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if ((int)telaAtual != 1)
@@ -152,15 +154,19 @@ namespace Estoque_Empresa
             }
         }
 
-        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvLista_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             dgvLista.CurrentRow.Selected = true;
-            CbAlterar.Text = dgvLista.CurrentRow.Cells[0].Value.ToString();
-            Nud1.Text = dgvLista.CurrentRow.Cells[1].Value.ToString();
-            Nud2.Text = dgvLista.CurrentRow.Cells[2].Value.ToString();
-            txtLocalA.Text = dgvLista.CurrentRow.Cells[3].Value.ToString();
-            txtFornecedor.Text = dgvLista.CurrentRow.Cells[5].Value.ToString();
+            txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
+            CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();            
+            Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
+            Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
+            txtLocalA.Text = dgvLista.CurrentRow.Cells["Local"].Value.ToString();            
+            txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
         }
+
+       
 
         public bool ExisteItem(int id)
         {
@@ -190,16 +196,15 @@ namespace Estoque_Empresa
                         //gridLista.Columns.Add("Local", "Local");
                         //gridLista.Columns.Add("Data", "Data");
                         //gridLista.Columns.Add("Observação", "Observação");
-
-                        //gridLista.Columns[0].Width = 20;
-                        //gridLista.Columns[1].Width = 200; //tamanho das colunas
-                        //gridLista.Columns[2].Width = 90;
-                        //gridLista.Columns[3].Width = 90;
-                        //gridLista.Columns[4].Width = 200;
-                        //gridLista.Columns[5].Width = 90;
                         gridLista.DataSource = ListaTodosDado;
-                        gridLista.AutoResizeColumns();
-                        gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        //gridLista.AutoResizeColumns();
+                        //gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //tamnho automatico
+                        gridLista.Columns["Id"].Width = 40;
+                        gridLista.Columns["Nome"].Width = 200; //tamanho das colunas
+                        gridLista.Columns["Disponivel"].Width = 90;
+                        gridLista.Columns["Manutencao"].Width = 95;
+                        gridLista.Columns["Local"].Width = 150;
+                        gridLista.Columns["Observacao"].Width = 168;
 
                         //foreach (Estoque a in ListaTodosDados)
                         //{
@@ -221,11 +226,12 @@ namespace Estoque_Empresa
                         ExisteItem = false;
                     else
                     {   gridLista.DataSource = ListaTodosDado;
-                        gridLista.AutoResizeColumns();
-
-                        // Configure the details DataGridView so that its columns automatically
-                        // adjust their widths when the data changes.
-                        gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        gridLista.Columns["Id"].Width = 40;
+                        gridLista.Columns["Nome"].Width = 200; //tamanho das colunas
+                        gridLista.Columns["Disponivel"].Width = 90;
+                        gridLista.Columns["Manutencao"].Width = 95;
+                        gridLista.Columns["Destino"].Width = 150;
+                        gridLista.Columns["Observacao"].Width = 168;
                     }
                     break;
             }
@@ -244,6 +250,7 @@ namespace Estoque_Empresa
             Nud1.Text = "0";
             Nud2.Text = "0";
             CbAlterar.Items.Clear();
+            txtID.Clear();
         }
 
         public void GeraRegistro(Estoque i)

@@ -45,8 +45,7 @@ namespace Crud
                 case 0:
                     RepositorioAccess.Update(item as Estoque);
                     break;
-                case 1:
-                    RepositorioAccess.Update(item as Registro);
+                case 1:                    
                     break;
                     //default:
                     //    throw new Exception("Bussines.CRUD Entidade com tipação invalida")  ;

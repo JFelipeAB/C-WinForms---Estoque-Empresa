@@ -13,11 +13,11 @@ using Entidades;
 namespace Estoque_Empresa
 {
     public partial class TelaConfirmacao : Form
-    {
-        public Registro item;
+    {       
         public TelaConfirmacao(Item i)
         {
             InitializeComponent();
+            Registro item = new Registro();
             item = i as Registro;
             txtFornecedor.ReadOnly = true;
             txtFornecedor.Text = item.Observacao;
@@ -39,17 +39,17 @@ namespace Estoque_Empresa
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtDestino == null)
-            {
-                MessageBox.Show("Preencha o campo destino ", "Campo invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                string texto = "";
-                texto = "\n" + item.Nome + '|' + item.Disponivel + '|' + item.Manutencao + '|' + item.Data + '|' + item.Destino + '|' + txtDestino.Text;
-                System.IO.File.AppendAllText(@"registros.txt", texto);
-                this.Close();
-            }
+            //if (txtDestino == null)
+            //{
+            //    MessageBox.Show("Preencha o campo destino ", "Campo invalido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    string texto = "";
+            //    texto = "\n" + item.Nome + '|' + item.Disponivel + '|' + item.Manutencao + '|' + item.Data + '|' + item.Destino + '|' + txtDestino.Text;
+            //    System.IO.File.AppendAllText(@"registros.txt", texto);
+            //    this.Close();
+            //}
         }
     }
 }

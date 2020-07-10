@@ -13,10 +13,9 @@ namespace DAOs
     {
 
         static public void Insert(Estoque item)
-        {            
+        {
             //OleDbConnection conn = new OleDbConnection(Conexao.pathPadrao); //PARAMITERSS
             //conn.Open();
-
 
             //string sql = "INSERT INTO Estoque (nome, disponivel, manutencao, local, Data, observacao) VALUES(@nome, @Disponivel, @Manutencao, @local,  @Data, @Observacao)";
 
@@ -30,56 +29,33 @@ namespace DAOs
             //cmd.Parameters.AddWithValue("@Observacao", item.Observacao);
             //cmd.ExecuteNonQuery();
             //conn.Close();
-
-            OleDbConnection conn = new OleDbConnection(Conexao.pathPadrao);
-
-
-            string sql = $"insert into Estoque(nome, disponivel, manutencao, local, Data, observacao) Values('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Local}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
-            //sql += $"('{item.Nome}' , {item.Disponivel} , {item.Manutencao}, '{item.Local}' , #{item.Data}# , '{item.Observacao}')";
-            //sql += $"('teste' , 1 , 1, 'localteste' , 'Observacao')"; //#'26/07/2020'# , 
-            OleDbCommand cmd = new OleDbCommand(sql);
-            cmd.Connection = conn;
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            string sql = $"insert into {item.Tipo}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
+            sql+= $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
+            EscreveSql(sql);
         }
 
 
         static public void Insert(Registro item)
         {
-
-            string sql = "Insert Into Registros(Nome, Disponivel, Manutencao, Destino, Data, observacao) Values";
-            sql += item.Nome + item.Disponivel + item.Manutencao + item.Destino + item.Data + item.Observacao;
-            RepositorioAccess.Escreve(sql);
+            string sql = $"insert into {item.Tipo}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
+            sql += $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
+            EscreveSql(sql);
         }
 
         static public void Delet(int id, string tabela)
         {
-            string sql = "";
-
-
-
-
-            RepositorioAccess.Escreve(sql);
+            string sql = $"DELETE * FROM {tabela} WHERE Id = {id}";
+            EscreveSql(sql);
         }
 
         static public void Update(Estoque item)
         {
-            string sql = "";
-
-
-            RepositorioAccess.Escreve(sql);
+            string sql = $"UPDATE {item.Tipo} SET Nome = '{item.Nome}', Disponivel = '{item.Disponivel}', ";
+            sql += $"Manutencao = '{item.Manutencao}', Destino = '{item.Data}', observacao = '{item.Observacao}' ";
+            sql += $"WHERE Id = {item.Id}";
+            EscreveSql(sql);            
         }
-        static public void Update(Registro item)
-        {
-            string sql = "";
-
-
-            RepositorioAccess.Escreve(sql);
-        }
-
-
+       
 
         static public DataTable Select(string item, string tabela)
         {            
@@ -87,7 +63,7 @@ namespace DAOs
             {
                 using (OleDbCommand dataCommand = dataConnection.CreateCommand())
                 {
-                    dataCommand.CommandText = $"SELECT * FROM {tabela} Where nome = {item}";
+                    dataCommand.CommandText = $"SELECT * FROM {tabela} Where nome = '{item}'";
                     dataConnection.Open();
                     //dataCommand.Parameters.AddWithValue("@ID", ID);
                     DataTable dados = new DataTable();
@@ -117,12 +93,18 @@ namespace DAOs
             }
         }
 
-        static private void Escreve(string text)
+        static public void EscreveSql(string sql)
         {
-            Conexao.AtivarConexao();
-            OleDbCommand cmd = new OleDbCommand(text);
-            cmd.ExecuteNonQuery();
-            Conexao.DesativarConexao();
-        }
+            using (OleDbConnection conn = new OleDbConnection(Conexao.pathPadrao))
+            {
+                using (OleDbCommand dataCommand = conn.CreateCommand())
+                {
+                    dataCommand.CommandText = sql;
+                    conn.Open();
+                    dataCommand.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+        }        
     }
 }

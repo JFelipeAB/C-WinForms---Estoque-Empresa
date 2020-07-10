@@ -16,3 +16,12 @@
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.pdb
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.dll
 \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.deps.json
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\netstandard2.0\Entidades.pdb
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.csprojAssemblyReference.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.AssemblyInfoInputs.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.AssemblyInfo.cs
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.csproj.CoreCompileInputs.cache
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.dll
+\\192.168.0.1\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\netstandard2.0\Entidades.pdb
