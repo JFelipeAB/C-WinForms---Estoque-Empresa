@@ -12,7 +12,7 @@ namespace DAOs
     static public class RepositorioAccess
     {
 
-        static public void Insert(Estoque item)
+        static public void InsertItem(Estoque item)
         {
             //OleDbConnection conn = new OleDbConnection(Conexao.pathPadrao); //PARAMITERSS
             //conn.Open();
@@ -29,41 +29,41 @@ namespace DAOs
             //cmd.Parameters.AddWithValue("@Observacao", item.Observacao);
             //cmd.ExecuteNonQuery();
             //conn.Close();
-            string sql = $"insert into {item.Tipo}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
+            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
             sql+= $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
             EscreveSql(sql);
         }
 
 
-        static public void Insert(Registro item)
+        static public void InsertItem(Registro item)
         {
-            string sql = $"insert into {item.Tipo}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
+            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
             sql += $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
             EscreveSql(sql);
         }
 
-        static public void Delet(int id, string tabela)
+        static public void DeletItem(int id, string tabela)
         {
             string sql = $"DELETE * FROM {tabela} WHERE Id = {id}";
             EscreveSql(sql);
         }
 
-        static public void Update(Estoque item)
+        static public void UpdateItem(Estoque item)
         {
-            string sql = $"UPDATE {item.Tipo} SET Nome = '{item.Nome}', Disponivel = '{item.Disponivel}', ";
-            sql += $"Manutencao = '{item.Manutencao}', Destino = '{item.Data}', observacao = '{item.Observacao}' ";
+            string sql = $"UPDATE {item.Tipo()} SET Nome = '{item.Nome}', Disponivel = '{item.Disponivel}', ";
+            sql += $"Manutencao = '{item.Manutencao}', observacao = '{item.Observacao}' ";
             sql += $"WHERE Id = {item.Id}";
             EscreveSql(sql);            
         }
        
 
-        static public DataTable Select(string item, string tabela)
+        static public DataTable SelectItem(string item, string tabela)
         {            
             using (OleDbConnection dataConnection = new OleDbConnection(Conexao.pathPadrao))
             {
                 using (OleDbCommand dataCommand = dataConnection.CreateCommand())
                 {
-                    dataCommand.CommandText = $"SELECT * FROM {tabela} Where nome = '{item}'";
+                    dataCommand.CommandText = $"SELECT * FROM {tabela} Where nome LIKE '%{item}%'";
                     dataConnection.Open();
                     //dataCommand.Parameters.AddWithValue("@ID", ID);
                     DataTable dados = new DataTable();
@@ -75,7 +75,7 @@ namespace DAOs
             }
         }
 
-        static public DataTable Select(string tabela)
+        static public DataTable SelectItem(string tabela)
         {
             using (OleDbConnection dataConnection = new OleDbConnection(Conexao.pathPadrao))
             {

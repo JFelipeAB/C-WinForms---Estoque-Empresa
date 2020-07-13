@@ -19,6 +19,7 @@ namespace Estoque_Empresa
         public DataGridView gridLista;      
         public Numerais.Entidade telaAtual = Numerais.Entidade.Estoque;
         public string ultimaPesquisa = null;
+        public Estoque itemSelecionado = new Estoque();
         public TelaMenu()
         {
             InitializeComponent();
@@ -26,11 +27,11 @@ namespace Estoque_Empresa
         }
 
         private void BtnBuscar_Click_1(object sender, EventArgs e)
-        {
-            
+        {   
             CbAlterar.Items.Clear();
             ultimaPesquisa = txtBusca.Text.ToString().Trim().ToUpper();
             MontaGrid(ultimaPesquisa);
+            LimpaCampos();
         }
 
         private void BtnAtualizar_Click_1(object sender, EventArgs e)
@@ -38,102 +39,97 @@ namespace Estoque_Empresa
             ultimaPesquisa = null;
             MontaGrid(null);
             LimpaCampos();
-            
         }
 
         private void BtnAlterar_Click_1(object sender, EventArgs e)
         {
-            Estoque itemAlterado = new Estoque();
-            itemAlterado.Id =Convert.ToInt32(txtID.Text.Trim());
-            itemAlterado.Nome = CbAlterar.Text.Trim();
-            itemAlterado.Disponivel = Nud1.Text.Trim();
-            itemAlterado.Manutencao = Nud2.Text.Trim();
-            itemAlterado.Local = txtLocalA.Text.Trim();
-            itemAlterado.Observacao = txtFornecedor.Text.Trim();
-            itemAlterado.Data = DateTime.Now.ToShortDateString();
-
-            CRUD.Alterar(itemAlterado);            
-            //Estoque itemAnterior = ExcluiItem(itemAlterado); // O Item retornado pelo metodo serve para atribuir o lacal do item automaticamenta, mais explicação a seguir
-
-            //if (itemAnterior == null) //Se o item a ser excluido não for encontrado, ele retorna nulo
-            //{
-            //    return;                   pra ve se esta saindo ou chegando itens
-            //}
-
-            //ListaTodosDados.Add(itemAlterado);
-            //SalvaLista();
-            //int qtdAntes = Convert.ToInt32(itemAnterior.Disponivel);
-            //int qtdDepois = Convert.ToInt32(itemAlterado.Disponivel);
-            //int qtdMaAntes = Convert.ToInt32(itemAnterior.Manutencao);
-            //int qtdMaDepois = Convert.ToInt32(itemAlterado.Manutencao);
-            //if (qtdDepois < qtdAntes)
-            //{
-            //    itemAlterado.Disponivel = (qtdAntes - qtdDepois).ToString();
-            //    itemAlterado.Manutencao = "0";
-            //    GeraRegistro(itemAlterado);
-            //}
-            //if (qtdMaDepois < qtdMaAntes)
-            //{
-            //    itemAlterado.Manutencao = (qtdMaAntes - qtdMaDepois).ToString();
-            //    itemAlterado.Disponivel = "0";
-            //    GeraRegistro(itemAlterado);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //itemAlterado.Disponivel = qtdDepois.ToString();
-            //itemAlterado.Manutencao = qtdMaDepois.ToString();            
-            LimpaCampos();
-            MontaGrid(ultimaPesquisa);
+            try 
+            { 
+                Estoque itemAlterado = new Estoque();
+                itemAlterado.Id =Convert.ToInt32(txtID.Text.Trim());
+                itemAlterado.Nome = CbAlterar.Text.Trim();
+                itemAlterado.Disponivel = Nud1.Text.Trim();
+                itemAlterado.Manutencao = Nud2.Text.Trim();
+                itemAlterado.Local = txtLocalA.Text.Trim();
+                itemAlterado.Observacao = txtFornecedor.Text.Trim();
+                itemAlterado.Data = DateTime.Now.ToShortDateString();
+                CRUD.Alterar(itemAlterado);
+            
+                if(itemSelecionado.Manutencao != itemAlterado.Manutencao || itemSelecionado.Disponivel != itemAlterado.Disponivel) // só gera regsitro se as qauntidade dos items forem alteradas
+                {
+                    GeraRegistro(itemSelecionado);
+                }
+                else
+                {
+                    MessageBox.Show("ALteração concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                LimpaCampos();
+                MontaGrid(ultimaPesquisa);
+            }
+            catch
+            {
+                MessageBox.Show("Ação Não Concluida, Falha na localização do Item!!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnExclui_Click_1(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(txtID.Text.Trim());
-            //if (ExisteItem(id))//verifica primeiro se o item existe
-            // {
-            if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+        {   
+            try
+            {
+                int id = Convert.ToInt32(txtID.Text.Trim());
+                if (MessageBox.Show("Certeza que deseja exclui o Item?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     switch ((int)telaAtual) // pega a aba atual
                     {
                         case 0:
-                            Estoque itemAlterado = new Estoque();
-                            itemAlterado.Id = id;
-                            itemAlterado.Nome = CbAlterar.Text.Trim();
-                            itemAlterado.Disponivel = Nud1.Text.Trim();
-                            itemAlterado.Manutencao = Nud2.Text.Trim();
-                            itemAlterado.Local = txtLocalA.Text.Trim();
-                            itemAlterado.Observacao = txtFornecedor.Text.Trim();
-                            itemAlterado.Data = DateTime.Now.ToShortDateString();
-                           // GeraRegistro(itemAlterado);
+                            Estoque itemExcluido = new Estoque();
+                            itemExcluido.Id = id;
+                            itemExcluido.Nome = CbAlterar.Text.Trim();
+                            itemExcluido.Disponivel = Nud1.Text.Trim();
+                            itemExcluido.Manutencao = Nud2.Text.Trim();
+                            itemExcluido.Local = txtLocalA.Text.Trim();
+                            itemExcluido.Observacao = txtFornecedor.Text.Trim();
+                            itemExcluido.Data = DateTime.Now.ToShortDateString();
+                            GeraRegistro(itemSelecionado);
                             CRUD.Deletar(id, telaAtual.ToString());
                             break;
                         case 1:
-                        CRUD.Deletar(id, telaAtual.ToString());
-                        break;
+                            CRUD.Deletar(id, telaAtual.ToString());
+                            MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
                     }
-                }        
-            else
-                MessageBox.Show("Item não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MontaGrid(ultimaPesquisa);
-            MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MontaGrid(ultimaPesquisa);
+                    LimpaCampos();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Item não encontrado. Acão não concluida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
-            Estoque cadastra = new Estoque();
-            cadastra.Nome = CbAlterar.Text.Trim();
-            cadastra.Disponivel = Nud1.Text.Trim();
-            cadastra.Manutencao = Nud2.Text.Trim();
-            cadastra.Local = txtLocalA.Text.Trim();
-            cadastra.Observacao = txtFornecedor.Text.Trim();
-            cadastra.Data = DateTime.Now.ToShortDateString();
-            CRUD.Inserir(cadastra);
-            MontaGrid(ultimaPesquisa);
-            LimpaCampos();
-            MessageBox.Show("Cadastrado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            try 
+            { 
+                Estoque cadastra = new Estoque();
+                cadastra.Nome = CbAlterar.Text.Trim();
+                cadastra.Disponivel = Nud1.Text.Trim();
+                cadastra.Manutencao = Nud2.Text.Trim();
+                cadastra.Local = txtLocalA.Text.Trim();
+                cadastra.Observacao = txtFornecedor.Text.Trim();
+                cadastra.Data = DateTime.Now.ToShortDateString();
+                CRUD.Inserir(cadastra);
+                MontaGrid(ultimaPesquisa);
+                LimpaCampos();
+                MessageBox.Show("Cadastrado com sucesso", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpaCampos();
+            }
+            catch
+            {
+                MessageBox.Show("Erro Banco de Dado. Acão não concluida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+}
 
         private void estoqueToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -157,29 +153,41 @@ namespace Estoque_Empresa
 
         private void dgvLista_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            dgvLista.CurrentRow.Selected = true;
-            txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
-            CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();            
-            Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
-            Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
-            txtLocalA.Text = dgvLista.CurrentRow.Cells["Local"].Value.ToString();            
-            txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
-        }
+            switch ((int)telaAtual) // pega a aba atual
+            {
+                case 0:
+                    dgvLista.CurrentRow.Selected = true;
+                    txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
+                    CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
+                    Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
+                    Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
+                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Local"].Value.ToString();
+                    txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
 
+                    itemSelecionado.Nome = CbAlterar.Text;
+                    itemSelecionado.Disponivel = Nud1.Text;
+                    itemSelecionado.Manutencao = Nud2.Text;
+                    itemSelecionado.Observacao = txtFornecedor.Text;
+                    itemSelecionado.Local = txtLocalA.Text;
+                    break;
+                case 1:
+                    dgvLista.CurrentRow.Selected = true;
+                    txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
+                    CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
+                    Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
+                    Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
+                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Destino"].Value.ToString();
+                    txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
+                    break;
+            }
+        }
        
 
-        public bool ExisteItem(int id)
-        {
-            return true;
-        }
-
         public void MontaGrid(string NomeItem)
-        {
-                        
+        {               
             DataTable ListaTodosDado = CRUD.Listar(NomeItem, telaAtual.ToString());
             gridLista = dgvLista;// Atribui o elemento da tela
-            this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);
-            //gridLista.Rows.Clear();
+            this.dgvLista.DefaultCellStyle.Font = new Font("Tahoma", 11);            
             gridLista.Columns.Clear();  
             bool ExisteItem = true;
             switch ((int)telaAtual) // pega a aba atual
@@ -188,14 +196,7 @@ namespace Estoque_Empresa
                     if (ListaTodosDado == null)
                         ExisteItem = false;
                     else
-                    {
-                        //gridLista.Columns.Add("ID", "ID");
-                        //gridLista.Columns.Add("Item", "Item"); //nome das colunas
-                        //gridLista.Columns.Add("Disponivel", "Disponivel");
-                        //gridLista.Columns.Add("Manutenção", "Manutenção");
-                        //gridLista.Columns.Add("Local", "Local");
-                        //gridLista.Columns.Add("Data", "Data");
-                        //gridLista.Columns.Add("Observação", "Observação");
+                    {   
                         gridLista.DataSource = ListaTodosDado;
                         //gridLista.AutoResizeColumns();
                         //gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //tamnho automatico
@@ -205,20 +206,6 @@ namespace Estoque_Empresa
                         gridLista.Columns["Manutencao"].Width = 95;
                         gridLista.Columns["Local"].Width = 150;
                         gridLista.Columns["Observacao"].Width = 168;
-
-                        //foreach (Estoque a in ListaTodosDados)
-                        //{
-                        //    gridLista.Rows.Add();
-                        //    gridLista.Rows[pos].Cells[0].Value = a.Id;
-                        //    gridLista.Rows[pos].Cells[1].Value = a.Nome;
-                        //    gridLista.Rows[pos].Cells[2].Value = a.Disponivel;
-                        //    gridLista.Rows[pos].Cells[3].Value = a.Manutencao;
-                        //    gridLista.Rows[pos].Cells[4].Value = a.Local;
-                        //    gridLista.Rows[pos].Cells[5].Value = a.Data;
-                        //    gridLista.Rows[pos].Cells[6].Value = a.Observacao;
-                        //    pos++;
-                        //    CbAlterar.Items.Add(a.Nome);
-                        //}
                     }
                     break;
                 case 1:
@@ -227,7 +214,7 @@ namespace Estoque_Empresa
                     else
                     {   gridLista.DataSource = ListaTodosDado;
                         gridLista.Columns["Id"].Width = 40;
-                        gridLista.Columns["Nome"].Width = 200; //tamanho das colunas
+                        gridLista.Columns["Nome"].Width = 200; 
                         gridLista.Columns["Disponivel"].Width = 90;
                         gridLista.Columns["Manutencao"].Width = 95;
                         gridLista.Columns["Destino"].Width = 150;
@@ -278,7 +265,5 @@ namespace Estoque_Empresa
             telaAtual = Numerais.Entidade.Registro;
             MontaGrid(null);
         }
-
-        
     }
 }

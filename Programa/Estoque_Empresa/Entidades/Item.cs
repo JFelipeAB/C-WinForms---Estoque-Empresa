@@ -10,8 +10,7 @@ namespace Entidades
         private string disponivel;
         private string manutencao;
         private string observacao;
-        private string data;
-        private Numerais.Entidade tipo;
+        private string data;         
 
         public string Nome { get; set; }
         public int Id { get; set; }
@@ -19,7 +18,8 @@ namespace Entidades
         public string Manutencao { get; set; }
         public string Observacao { get; set; }
         public string Data { get; set; }
-        public Numerais.Entidade Tipo { get; set; }
+        public abstract Numerais.Entidade Tipo();
+        
 
     }
 }

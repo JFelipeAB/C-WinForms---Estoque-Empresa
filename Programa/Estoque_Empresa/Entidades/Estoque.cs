@@ -7,11 +7,13 @@ namespace Entidades
     public class Estoque : Item
     {
 
-        private string local;
+        private string local;  
 
         public string Local { get; set; }
-       
-       public  Numerais.Entidade tipo = Numerais.Entidade.Estoque; 
-       
+
+        public override Numerais.Entidade Tipo() 
+        {
+            return Numerais.Entidade.Estoque;
+        }
     }
 }

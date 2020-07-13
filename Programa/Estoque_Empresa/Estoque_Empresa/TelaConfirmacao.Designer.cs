@@ -43,6 +43,7 @@
             this.nudDisponivel = new System.Windows.Forms.NumericUpDown();
             this.BtnDescartar = new System.Windows.Forms.Button();
             this.txtLocal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudManutenção)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDisponivel)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDestino);
@@ -73,7 +75,7 @@
             this.groupBox1.Size = new System.Drawing.Size(811, 180);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Deseja guardar o Registro ?";
+            this.groupBox1.Text = "Dados da movimentação";
             // 
             // txtNome
             // 
@@ -97,9 +99,9 @@
             // txtDestino
             // 
             this.txtDestino.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDestino.Location = new System.Drawing.Point(612, 139);
+            this.txtDestino.Location = new System.Drawing.Point(582, 139);
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(168, 32);
+            this.txtDestino.Size = new System.Drawing.Size(198, 32);
             this.txtDestino.TabIndex = 22;
             this.txtDestino.UseWaitCursor = true;
             // 
@@ -125,11 +127,11 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Myanmar Text", 14F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.Location = new System.Drawing.Point(406, 134);
+            this.btnGuardar.Location = new System.Drawing.Point(405, 121);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(149, 37);
             this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Salvar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -194,7 +196,7 @@
             // BtnDescartar
             // 
             this.BtnDescartar.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDescartar.Location = new System.Drawing.Point(135, 134);
+            this.BtnDescartar.Location = new System.Drawing.Point(225, 121);
             this.BtnDescartar.Name = "BtnDescartar";
             this.BtnDescartar.Size = new System.Drawing.Size(162, 37);
             this.BtnDescartar.TabIndex = 11;
@@ -210,6 +212,16 @@
             this.txtLocal.Size = new System.Drawing.Size(200, 32);
             this.txtLocal.TabIndex = 13;
             this.txtLocal.UseWaitCursor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(161, 34);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Salvar Registro ?";
             // 
             // TelaConfirmacao
             // 
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDestino;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label label7;
     }
 }
