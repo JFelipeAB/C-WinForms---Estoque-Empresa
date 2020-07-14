@@ -29,16 +29,16 @@ namespace DAOs
             //cmd.Parameters.AddWithValue("@Observacao", item.Observacao);
             //cmd.ExecuteNonQuery();
             //conn.Close();
-            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
-            sql+= $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
+            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Loca, Data, Observacao) Values";
+            sql += $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Local}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
             EscreveSql(sql);
         }
 
 
         static public void InsertItem(Registro item)
         {
-            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Data, Observacao) Values";
-            sql += $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
+            string sql = $"insert into {item.Tipo()}(Nome, Disponivel, Manutencao, Destino ,Data, Observacao) Values";
+            sql += $"('{item.Nome}','{item.Disponivel}','{item.Manutencao}','{item.Destino}','{item.Data}','{item.Observacao}')";// Disponivel, Manutencao, Local, Observacao) Values ";
             EscreveSql(sql);
         }
 
@@ -51,7 +51,7 @@ namespace DAOs
         static public void UpdateItem(Estoque item)
         {
             string sql = $"UPDATE {item.Tipo()} SET Nome = '{item.Nome}', Disponivel = '{item.Disponivel}', ";
-            sql += $"Manutencao = '{item.Manutencao}', observacao = '{item.Observacao}' ";
+            sql += $"Manutencao = '{item.Manutencao}', Loca = '{item.Local}', observacao = '{item.Observacao}' ";
             sql += $"WHERE Id = {item.Id}";
             EscreveSql(sql);            
         }

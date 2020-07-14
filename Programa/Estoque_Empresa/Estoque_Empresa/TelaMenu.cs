@@ -61,7 +61,7 @@ namespace Estoque_Empresa
                 }
                 else
                 {
-                    MessageBox.Show("ALteração concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Alteração concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 LimpaCampos();
                 MontaGrid(ultimaPesquisa);
@@ -73,7 +73,7 @@ namespace Estoque_Empresa
         }
 
         private void BtnExclui_Click_1(object sender, EventArgs e)
-        {   
+        {
             try
             {
                 int id = Convert.ToInt32(txtID.Text.Trim());
@@ -95,12 +95,12 @@ namespace Estoque_Empresa
                             break;
                         case 1:
                             CRUD.Deletar(id, telaAtual.ToString());
-                            MessageBox.Show("Ação concluida com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Item excluido com sucesso ", "Ação concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                     }
                     MontaGrid(ultimaPesquisa);
                     LimpaCampos();
-                }
+            }
             }
             catch
             {
@@ -110,8 +110,8 @@ namespace Estoque_Empresa
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
-            try 
-            { 
+            try
+            {
                 Estoque cadastra = new Estoque();
                 cadastra.Nome = CbAlterar.Text.Trim();
                 cadastra.Disponivel = Nud1.Text.Trim();
@@ -129,7 +129,7 @@ namespace Estoque_Empresa
             {
                 MessageBox.Show("Erro Banco de Dado. Acão não concluida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-}
+        }
 
         private void estoqueToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -161,7 +161,7 @@ namespace Estoque_Empresa
                     CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
                     Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
                     Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
-                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Local"].Value.ToString();
+                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Loca"].Value.ToString();
                     txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
 
                     itemSelecionado.Nome = CbAlterar.Text;
@@ -204,7 +204,7 @@ namespace Estoque_Empresa
                         gridLista.Columns["Nome"].Width = 200; //tamanho das colunas
                         gridLista.Columns["Disponivel"].Width = 90;
                         gridLista.Columns["Manutencao"].Width = 95;
-                        gridLista.Columns["Local"].Width = 150;
+                        gridLista.Columns["Loca"].Width = 150;
                         gridLista.Columns["Observacao"].Width = 168;
                     }
                     break;
@@ -254,6 +254,11 @@ namespace Estoque_Empresa
             BtnAlterar.Visible = true;
             telaAtual = Numerais.Entidade.Estoque;
             MontaGrid(null);
+            txtBusca.ReadOnly = false;
+            txtFornecedor.ReadOnly = false;
+            txtLocalA.ReadOnly = false;
+            Nud1.ReadOnly = false;
+            Nud2.ReadOnly = false;
         }
 
         private void MontaTelaRegistro()
@@ -264,6 +269,11 @@ namespace Estoque_Empresa
             BtnAlterar.Visible = false;
             telaAtual = Numerais.Entidade.Registro;
             MontaGrid(null);
+            txtBusca.ReadOnly = true;
+            txtFornecedor.ReadOnly = true;
+            txtLocalA.ReadOnly = true;
+            Nud1.ReadOnly = true;
+            Nud2.ReadOnly = true;
         }
     }
 }

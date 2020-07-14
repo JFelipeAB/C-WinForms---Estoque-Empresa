@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj": {}
+    "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj": {
+    "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
+        "projectPath": "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
-        "outputPath": "\\\\servidor\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\obj\\",
+        "outputPath": "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
