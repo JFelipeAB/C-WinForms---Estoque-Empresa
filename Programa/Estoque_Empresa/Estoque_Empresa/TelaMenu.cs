@@ -216,12 +216,12 @@ namespace Estoque_Empresa
                         gridLista.DataSource = ListaTodosDado;
                         //gridLista.AutoResizeColumns();
                         //gridLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //tamnho automatico
-                        gridLista.Columns["Id"].Width = 40;
-                        gridLista.Columns["Nome"].Width = 200; //tamanho das colunas
-                        gridLista.Columns["Disponivel"].Width = 90;
-                        gridLista.Columns["Manutencao"].Width = 95;
-                        gridLista.Columns["Loca"].Width = 150;
-                        gridLista.Columns["Observacao"].Width = 168;
+                        gridLista.Columns["Id"].Width = 42;
+                        gridLista.Columns["Nome"].Width = 240; //tamanho das colunas
+                        gridLista.Columns["Disponivel"].Width = 50;
+                        gridLista.Columns["Manutencao"].Width = 50;
+                        gridLista.Columns["Loca"].Width = 190;
+                        gridLista.Columns["Observacao"].Width = 155;
                     }
                     break;
                 case 1:
@@ -229,12 +229,12 @@ namespace Estoque_Empresa
                         ExisteItem = false;
                     else
                     {   gridLista.DataSource = ListaTodosDado;
-                        gridLista.Columns["Id"].Width = 40;
-                        gridLista.Columns["Nome"].Width = 200; 
-                        gridLista.Columns["Disponivel"].Width = 90;
-                        gridLista.Columns["Manutencao"].Width = 95;
-                        gridLista.Columns["Destino"].Width = 150;
-                        gridLista.Columns["Observacao"].Width = 168;
+                        gridLista.Columns["Id"].Width = 42;
+                        gridLista.Columns["Nome"].Width = 240; 
+                        gridLista.Columns["Disponivel"].Width = 50;
+                        gridLista.Columns["Manutencao"].Width = 50;
+                        gridLista.Columns["Destino"].Width = 190;
+                        gridLista.Columns["Observacao"].Width = 155;
                     }
                     break;
             }
