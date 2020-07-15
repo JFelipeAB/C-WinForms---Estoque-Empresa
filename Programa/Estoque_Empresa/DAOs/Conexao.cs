@@ -13,7 +13,7 @@ namespace DAOs
     static public class Conexao
     {
                                                                                              
-        static public string pathPadrao = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = \\servidor\operacional\TI\projetos\Estoque Informatica 1.2\Estoque_Empresa\Programa\Banco\Base.mdb";
+        static public string pathPadrao = @"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = \\servidor\operacional\TI\projetos\Estoque Informatica 1.3\Estoque_Empresa\Programa\Banco\Base.mdb";
         
         static OleDbConnection conn = new OleDbConnection();
         static string PathPadrao { get; }

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "C0sfwpqCeegrCrZ9hbsWGFvNj2MfkUGEU5CLa5Oh6PAyKV6WI5s2fzy9+g+EzS+A1xyVhmh65aA/TEMx0oCfng==",
+  "dgSpecHash": "F9PVW76hLnino8W3eWhwL2v+0t8/3p8V6hbmlADfsuoBpvoXy0uGK+3bwpiKLcqr5/S0Py7TFcAj63NNEV0S6A==",
   "success": true,
-  "projectFilePath": "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.2\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
+  "projectFilePath": "\\\\192.168.0.1\\operacional\\TI\\projetos\\Estoque Informatica 1.3\\Estoque_Empresa\\Programa\\Estoque_Empresa\\Entidades\\Entidades.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Administrador\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Administrador\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -8,6 +8,73 @@ namespace DAOs
 {
     class RepositorioTXTcs
     {
+
+        //rotina para inserir dados arquivo texto
+
+
+        //List<Estoque> lista = new List<Estoque>();
+        //using (StreamReader sr = new StreamReader("estoque.txt"))
+        //{
+        //    string linha = string.Empty;
+        //    int contador = 0;
+
+        //    while ((linha = sr.ReadLine()) != null)
+        //    {
+        //        string[] split = new string[6];
+        //        Estoque c = new Estoque();
+        //        split = linha.Split('|');
+        //        c.Nome = split[0];
+        //        c.Disponivel = split[1];
+        //        c.Manutencao = split[2];
+        //        c.Local = split[3];
+        //        c.Data = split[4];
+        //        c.Observacao = split[5];
+
+        //        lista.Add(c);
+        //        contador++;
+        //    }
+        //}
+        //foreach (Estoque l in lista)
+        //{
+        //    CRUD.Inserir(l);
+        //}
+
+        //List<Registro> lista2 = new List<Registro>();
+        //using (StreamReader sr = new StreamReader("registros.txt"))
+        //{
+        //    string linha = string.Empty;
+        //    int contador = 0;
+
+        //    while ((linha = sr.ReadLine()) != null)
+        //    {
+        //        if (linha == ""||contador == 17)
+        //            break;
+        //        string[] split = new string[6];
+        //        Registro c = new Registro();
+        //        split = linha.Split('|');
+        //        c.Nome = split[0];
+        //        c.Disponivel = split[1];
+        //        c.Manutencao = split[2];                    
+        //        c.Data = split[3];
+        //        c.Observacao = split[4];
+        //        c.Destino = split[5];
+
+        //        lista2.Add(c);
+        //        contador++;
+        //    }
+        //}
+
+        //foreach (Registro l in lista2)
+        //{
+        //    CRUD.Inserir(l);
+        //}
+
+
+
+
+
+
+
         //public void BuscarDados()
         //{
         //    TodosDados.Clear();

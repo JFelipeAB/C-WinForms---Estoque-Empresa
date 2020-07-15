@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaMenu));
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.LabelTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,7 +57,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            //this.baseDataSet = new Estoque_Empresa.BaseDataSet();
             this.baseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Nud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Nud1)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.menuStrip1.SuspendLayout();           
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,7 @@
             this.dgvLista.Size = new System.Drawing.Size(889, 344);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick_1);
+            this.dgvLista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvLista_KeyUp);
             // 
             // LabelTitulo
             // 
@@ -349,15 +350,6 @@
             this.registrosToolStripMenuItem.Text = "Registros";
             this.registrosToolStripMenuItem.Click += new System.EventHandler(this.registrosToolStripMenuItem_Click_1);
             // 
-            // baseDataSet
-            // 
-           
-            // 
-            // baseDataSetBindingSource
-            // 
-            
-            this.baseDataSetBindingSource.Position = 0;
-            // 
             // estoqueBindingSource
             // 
             this.estoqueBindingSource.DataMember = "Estoque";
@@ -374,9 +366,10 @@
             this.Controls.Add(this.LabelTitulo);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaMenu";
-            this.Text = "Estoque 1.1";
+            this.Text = "Estoque 1.3";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -386,7 +379,6 @@
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            
             ((System.ComponentModel.ISupportInitialize)(this.baseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);

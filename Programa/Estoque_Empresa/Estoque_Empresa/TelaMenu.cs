@@ -131,7 +131,7 @@ namespace Estoque_Empresa
             }
         }
 
-        private void estoqueToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void estoqueToolStripMenuItem_Click_1(object sender, EventArgs e)  //Clique na guia de Estoque
         {
             if ((int)telaAtual != 0)
             {
@@ -141,7 +141,7 @@ namespace Estoque_Empresa
         }
 
 
-        private void registrosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void registrosToolStripMenuItem_Click_1(object sender, EventArgs e) //clique na guia de registros
         {
             if ((int)telaAtual != 1)
             {
@@ -151,37 +151,53 @@ namespace Estoque_Empresa
         }
 
 
-        private void dgvLista_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvLista_CellClick_1(object sender, DataGridViewCellEventArgs e) //clique em alguma celula do grid
         {
-            switch ((int)telaAtual) // pega a aba atual
-            {
-                case 0:
-                    dgvLista.CurrentRow.Selected = true;
-                    txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
-                    CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
-                    Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
-                    Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
-                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Loca"].Value.ToString();
-                    txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
-
-                    itemSelecionado.Nome = CbAlterar.Text;
-                    itemSelecionado.Disponivel = Nud1.Text;
-                    itemSelecionado.Manutencao = Nud2.Text;
-                    itemSelecionado.Observacao = txtFornecedor.Text;
-                    itemSelecionado.Local = txtLocalA.Text;
-                    break;
-                case 1:
-                    dgvLista.CurrentRow.Selected = true;
-                    txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
-                    CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
-                    Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
-                    Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
-                    txtLocalA.Text = dgvLista.CurrentRow.Cells["Destino"].Value.ToString();
-                    txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
-                    break;
-            }
+            SelecionaLinha();
         }
-       
+        
+        private void dgvLista_KeyUp(object sender, KeyEventArgs e)
+        {
+            SelecionaLinha();
+        }
+
+        private void SelecionaLinha()
+        {
+            try
+            {
+                switch ((int)telaAtual) // pega a aba atual
+                {
+                    case 0:
+                        dgvLista.CurrentRow.Selected = true;
+                        txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
+                        CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
+                        Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
+                        Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
+                        txtLocalA.Text = dgvLista.CurrentRow.Cells["Loca"].Value.ToString();
+                        txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
+
+                        itemSelecionado.Nome = CbAlterar.Text;
+                        itemSelecionado.Disponivel = Nud1.Text;
+                        itemSelecionado.Manutencao = Nud2.Text;
+                        itemSelecionado.Observacao = txtFornecedor.Text;
+                        itemSelecionado.Local = txtLocalA.Text;
+                        break;
+                    case 1:
+                        dgvLista.CurrentRow.Selected = true;
+                        txtID.Text = dgvLista.CurrentRow.Cells["Id"].Value.ToString();
+                        CbAlterar.Text = dgvLista.CurrentRow.Cells["Nome"].Value.ToString();
+                        Nud1.Text = dgvLista.CurrentRow.Cells["Disponivel"].Value.ToString();
+                        Nud2.Text = dgvLista.CurrentRow.Cells["Manutencao"].Value.ToString();
+                        txtLocalA.Text = dgvLista.CurrentRow.Cells["Destino"].Value.ToString();
+                        txtFornecedor.Text = dgvLista.CurrentRow.Cells["Observacao"].Value.ToString();
+                        break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Entrada de dado errada", "Busca", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }        
+        }
 
         public void MontaGrid(string NomeItem)
         {               
@@ -254,7 +270,6 @@ namespace Estoque_Empresa
             BtnAlterar.Visible = true;
             telaAtual = Numerais.Entidade.Estoque;
             MontaGrid(null);
-            txtBusca.ReadOnly = false;
             txtFornecedor.ReadOnly = false;
             txtLocalA.ReadOnly = false;
             Nud1.ReadOnly = false;
@@ -268,8 +283,7 @@ namespace Estoque_Empresa
             btnCadastrar.Visible = false;
             BtnAlterar.Visible = false;
             telaAtual = Numerais.Entidade.Registro;
-            MontaGrid(null);
-            txtBusca.ReadOnly = true;
+            MontaGrid(null);            
             txtFornecedor.ReadOnly = true;
             txtLocalA.ReadOnly = true;
             Nud1.ReadOnly = true;
