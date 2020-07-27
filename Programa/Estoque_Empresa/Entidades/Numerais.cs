@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -8,7 +7,6 @@ namespace Entidades
 {
     public class Numerais
     {
-       
         public enum Entidade
         {
             Estoque = 0,

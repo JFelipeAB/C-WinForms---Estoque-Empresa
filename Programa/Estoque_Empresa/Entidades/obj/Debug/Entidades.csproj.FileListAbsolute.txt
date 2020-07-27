@@ -1,0 +1,6 @@
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\Entidades.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\bin\Debug\Entidades.pdb
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\Entidades.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\Entidades\obj\Debug\Entidades.pdb

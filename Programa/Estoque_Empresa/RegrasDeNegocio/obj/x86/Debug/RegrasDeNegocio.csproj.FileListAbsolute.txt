@@ -1,0 +1,11 @@
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\RegrasDeNegocio.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\RegrasDeNegocio.pdb
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\DAO.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\Entidades.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\DAO.pdb
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\bin\x86\Debug\Entidades.pdb
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\obj\x86\Debug\RegrasDeNegocio.csprojAssemblyReference.cache
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\obj\x86\Debug\RegrasDeNegocio.csproj.CoreCompileInputs.cache
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\obj\x86\Debug\RegrasDeNegocio.csproj.CopyComplete
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\obj\x86\Debug\RegrasDeNegocio.dll
+\\192.168.0.85\Banco de Dados - Access\Estoque Informatica\Estoque_Empresa\Programa\Estoque_Empresa\RegrasDeNegocio\obj\x86\Debug\RegrasDeNegocio.pdb
